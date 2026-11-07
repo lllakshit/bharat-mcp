@@ -79,7 +79,7 @@ async function askOllama(arm, gstin) {
   return { text: "", used_tool: usedTool, error: "Exceeded six tool-call turns" }
 }
 
-// Harness-only stand-in. It exercises scoring and MCP wiring without requiring Ollama.
+// Harness-only stand-in. It exercises scoring and result serialization without requiring Ollama.
 async function askMock(arm, gstin) {
   if (arm === "with") {
     const { validateGstin } = await import(join(root, "dist/validators/gstin.js"))
@@ -88,7 +88,7 @@ async function askMock(arm, gstin) {
   return { text: `${/^\d{2}[A-Z]{5}\d{4}[A-Z][1-9A-Z]Z[0-9A-Z]$/.test(gstin) ? "VALID" : "INVALID"}\nshape-only stand-in`, used_tool: false, turns: 1 }
 }
 
-const results = {}
+if (arms.includes("with") && args.mock !== "true") await connectTools()\n\nconst results = {}
 for (const arm of arms) {
   const rows = []
   for (let i = 0; i < cases.length; i++) {
