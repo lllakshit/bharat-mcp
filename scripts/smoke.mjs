@@ -4,8 +4,16 @@ import { Client } from "@modelcontextprotocol/sdk/client/index.js"
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js"
 import { fileURLToPath } from "node:url"
 
-const cli = process.argv[2] ?? fileURLToPath(new URL("../dist/cli.js", import.meta.url))
-const transport = new StdioClientTransport({ command: process.execPath, args: [cli] })
+// `node scripts/smoke.mjs`                 the built server in this folder
+// `node scripts/smoke.mjs path/to/cli.js`  a built server somewhere else
+// `node scripts/smoke.mjs --npx <spec>`    exactly what a user runs, e.g. --npx @llakshit/bharat-mcp (or a .tgz path)
+const npxIndex = process.argv.indexOf("--npx")
+// A local .tgz path would be run as a file by npx, so it is passed as --package; a registry name is run as users run it.
+const npxArgs = (spec) => (spec.endsWith(".tgz") ? ["-y", "--package", spec, "bharat-mcp"] : ["-y", spec])
+const transport =
+  npxIndex > 0
+    ? new StdioClientTransport({ command: "npx", args: npxArgs(process.argv[npxIndex + 1]) })
+    : new StdioClientTransport({ command: process.execPath, args: [process.argv[2] ?? fileURLToPath(new URL("../dist/cli.js", import.meta.url))] })
 const client = new Client({ name: "smoke", version: "0.0.0" })
 await client.connect(transport)
 

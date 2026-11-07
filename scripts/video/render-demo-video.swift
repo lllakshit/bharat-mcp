@@ -89,8 +89,8 @@ let outputEnd = outputStart + Double(timing.total_ms) / 1000
 let termEnd = outputEnd + 2.6
 let total = termEnd + 5.2
 
-func card(_ ctx: CGContext, title: String, lines: [(String, UInt32, CGFloat)], fade: CGFloat) {
-    draw(ctx, title, x: CGFloat(W) / 2, top: 230, size: 76, color: 0xffffff, alpha: fade, bold: true, center: true)
+func card(_ ctx: CGContext, title: String, size: CGFloat = 76, lines: [(String, UInt32, CGFloat)], fade: CGFloat) {
+    draw(ctx, title, x: CGFloat(W) / 2, top: 230, size: size, color: 0xffffff, alpha: fade, bold: true, center: true)
     var top: CGFloat = 340
     for (text, color, size) in lines {
         draw(ctx, text, x: CGFloat(W) / 2, top: top, size: size, color: color, alpha: fade, center: true)
@@ -111,7 +111,7 @@ func render(_ ctx: CGContext, at t: Double) {
     }
     if t >= termEnd {
         let fade = CGFloat(min(1, (t - termEnd) / 0.5))
-        card(ctx, title: "npx -y bharat-mcp", lines: [
+        card(ctx, title: "npx -y @llakshit/bharat-mcp", size: 58, lines: [
             ("github.com/lllakshit/bharat-mcp", 0x66d9ef, 30),
             ("Checks format and checksums. It does not prove a GSTIN is registered.", 0xe6e8ef, 22),
             ("Data: pincodes from GeoNames (CC BY 4.0). Holidays: DoPT orders.", 0x8a90a5, 20),

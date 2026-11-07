@@ -3,7 +3,7 @@
 **Give your AI agent accurate Indian GST, PAN, pincode and compliance knowledge.**
 
 [![CI](https://github.com/lllakshit/bharat-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/lllakshit/bharat-mcp/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/bharat-mcp)](https://www.npmjs.com/package/bharat-mcp)
+[![npm](https://img.shields.io/npm/v/@llakshit/bharat-mcp)](https://www.npmjs.com/package/@llakshit/bharat-mcp)
 [![license](https://img.shields.io/badge/licence-MIT-blue)](LICENSE)
 
 An [MCP](https://modelcontextprotocol.io) server with eight small tools for Indian data that an AI agent should not work out in its head: checksums, code tables, lookups and due dates. It runs **offline**. The checksums are calculated, the datasets ship inside the package, and nothing you type is sent anywhere. Every answer says what it is based on and how old that data is.
@@ -76,7 +76,7 @@ Requires Node 18 or newer.
   "mcpServers": {
     "bharat": {
       "command": "npx",
-      "args": ["-y", "bharat-mcp"]
+      "args": ["-y", "@llakshit/bharat-mcp"]
     }
   }
 }
@@ -87,14 +87,14 @@ Requires Node 18 or newer.
 **Claude Code**:
 
 ```bash
-claude mcp add bharat -- npx -y bharat-mcp
+claude mcp add bharat -- npx -y @llakshit/bharat-mcp
 ```
 
 **From source** (before or instead of npm): `npm run build`, then use `"command": "node", "args": ["/path/to/bharat-mcp/dist/cli.js"]` in the config above.
 
 Then ask your agent: *"Is GSTIN 29AAGCB7383J1Z5 valid?"* It should call `validate_gstin` and tell you the check character is wrong.
 
-You can also use the functions directly: `import { validateGstin } from "bharat-mcp"`.
+You can also use the functions directly: `import { validateGstin } from "@llakshit/bharat-mcp"`.
 
 ## Speed and size
 
