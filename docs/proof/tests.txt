@@ -1,7 +1,7 @@
 
  RUN  v5.1.0 /Users/user/Personal/bharat-mcp
 
- ✓ tests/validators.test.ts > verhoeff > matches the published reference vectors 1ms
+ ✓ tests/validators.test.ts > verhoeff > matches the published reference vectors 2ms
  ✓ tests/validators.test.ts > validateGstin > accepts 27AAPFU0939F1ZV 1ms
  ✓ tests/validators.test.ts > validateGstin > accepts 29AAGCB7383J1Z4 0ms
  ✓ tests/validators.test.ts > validateGstin > accepts 27AAACR5055K1Z7 0ms
@@ -23,45 +23,50 @@
  ✓ tests/validators.test.ts > validatePan > normalises case and spaces 0ms
  ✓ tests/validators.test.ts > validatePan > rejects bad shapes 0ms
  ✓ tests/validators.test.ts > validatePan > rejects an unknown holder type 0ms
- ✓ tests/validators.test.ts > validateAadhaarFormat > accepts a number with a correct Verhoeff digit, with or without spaces 0ms
+ ✓ tests/validators.test.ts > validateAadhaarFormat > accepts a number with a correct Verhoeff digit, with or without spaces 1ms
  ✓ tests/validators.test.ts > validateAadhaarFormat > only ever returns the last four digits 0ms
  ✓ tests/validators.test.ts > validateAadhaarFormat > masks everything unless the input is a full 12-digit number 0ms
  ✓ tests/validators.test.ts > validateAadhaarFormat > catches every single-digit mistake and every swap of neighbouring digits 1ms
  ✓ tests/validators.test.ts > validateAadhaarFormat > rejects wrong length, letters and a leading 0 or 1 0ms
  ✓ tests/validators.test.ts > validateIfsc > accepts a well-formed code and names a known bank 0ms
  ✓ tests/validators.test.ts > validateIfsc > accepts an unknown bank code but gives no name 0ms
- ✓ tests/validators.test.ts > validateIfsc > rejects bad shapes, including a non-zero fifth character 1ms
- ✓ tests/data.test.ts > states > has 36 states and union territories with unique GST codes and RTO prefixes 2ms
+ ✓ tests/validators.test.ts > validateIfsc > rejects bad shapes, including a non-zero fifth character 0ms
+ ✓ tests/data.test.ts > states > has 36 states and union territories with unique GST codes and RTO prefixes 1ms
  ✓ tests/data.test.ts > states > finds a state by name, GST code, ISO code and RTO prefix 1ms
  ✓ tests/data.test.ts > states > accepts common alternative names and older codes, and never guesses from a vague word 0ms
  ✓ tests/data.test.ts > states > knows the GST codes that are not states 1ms
- ✓ tests/data.test.ts > lookupPincode > finds well-known pincodes 23ms
+ ✓ tests/data.test.ts > lookupPincode > finds well-known pincodes 22ms
  ✓ tests/data.test.ts > lookupPincode > uses today's state names 0ms
  ✓ tests/data.test.ts > lookupPincode > says why a pincode was not found 0ms
  ✓ tests/data.test.ts > lookupPincode > always reports how old the data is and credits the source 1ms
  ✓ tests/data.test.ts > lookupPincode > covers about 19,000 pincodes across every state and union territory 0ms
- ✓ tests/data.test.ts > holidays > has 17 closed holidays for each bundled year, in date order, with correct weekdays 1ms
+ ✓ tests/data.test.ts > holidays > has 17 closed holidays for each bundled year, in date order, with correct weekdays 2ms
  ✓ tests/data.test.ts > holidays > checks a single date and returns nothing for years it does not cover 0ms
  ✓ tests/data.test.ts > dates > validates real calendar dates only 0ms
  ✓ tests/data.test.ts > dates > does date arithmetic without time-zone drift 0ms
  ✓ tests/data.test.ts > computeDeadlines > lists the standard monthly dates for a month 8ms
  ✓ tests/data.test.ts > computeDeadlines > moves the March TDS deposit to 30 April 0ms
- ✓ tests/data.test.ts > computeDeadlines > picks the right QRMP GSTR-3B day for the state 3ms
- ✓ tests/data.test.ts > computeDeadlines > handles quarterly, annual and year-crossing ranges 1ms
+ ✓ tests/data.test.ts > computeDeadlines > picks the right QRMP GSTR-3B day for the state 8ms
+ ✓ tests/data.test.ts > computeDeadlines > handles quarterly, annual and year-crossing ranges 0ms
  ✓ tests/data.test.ts > computeDeadlines > filters by category and returns the event-based rules for that category only 0ms
  ✓ tests/data.test.ts > computeDeadlines > flags a due date that falls on a central government holiday without moving it 0ms
- ✓ tests/data.test.ts > computeDeadlines > every rule names its authority, legal basis and confidence 6ms
+ ✓ tests/data.test.ts > computeDeadlines > every rule names its authority, legal basis and confidence 7ms
  ✓ tests/data.test.ts > computeDeadlines > rejects impossible or oversized ranges 1ms
  ✓ tests/data.test.ts > computeDeadlines > warns when the range goes beyond the bundled holiday years 0ms
  ✓ tests/data.test.ts > computeDeadlines > always states how far the data can be trusted 0ms
  ✓ tests/server.test.ts > the MCP server > lists all eight tools, each marked read-only 4ms
  ✓ tests/server.test.ts > the MCP server > validates a real GSTIN and rejects a fake one that looks right 2ms
  ✓ tests/server.test.ts > the MCP server > never returns more than the last four Aadhaar digits 0ms
- ✓ tests/server.test.ts > the MCP server > answers the lookup and calendar tools 24ms
+ ✓ tests/server.test.ts > the MCP server > answers the lookup and calendar tools 28ms
  ✓ tests/server.test.ts > the MCP server > rejects bad input instead of guessing 1ms
+ ✓ tests/ollama-bench.test.ts > bench/llm/ollama.mjs > runs both arms over Ollama's HTTP API, calls the tool through MCP, and ignores <think> blocks 230ms
+ ✓ tests/ollama-bench.test.ts > bench/llm/ollama.mjs > marks mock runs so they stay out of comparisons 115ms
+ ✓ tests/ollama-bench.test.ts > bench/llm/ollama.mjs > stops with a plain message when Ollama is not running 124ms
+ ✓ tests/ollama-bench.test.ts > bench/llm/ollama.mjs > stops when the model is not installed 131ms
+ ✓ tests/ollama-bench.test.ts > bench/llm/ollama.mjs > refuses the tool arm for a model without tool-calling, but still runs the unaided arm 310ms
 
- Test Files  3 passed (3)
-      Tests  58 passed (58)
-   Start at  10:50:12
-   Duration  337ms (import 50%, tests 39%, transform 8%, worker 3%)
+ Test Files  4 passed (4)
+      Tests  63 passed (63)
+   Start at  11:36:19
+   Duration  2.23s (tests 90%, import 8%, transform 1%, worker 1%)
 
