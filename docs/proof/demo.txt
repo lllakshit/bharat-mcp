@@ -7,13 +7,13 @@ tools: validate_gstin, validate_pan, validate_aadhaar_format, validate_ifsc
 ▶ validate_gstin {"gstin":"29AAGCB7383J1Z4"}
     result             ✔ well-formed
     decoded            Karnataka · PAN AAGCB7383J · Company
-    (2.7 ms, answered offline over stdio)
+    (2.3 ms, answered offline over stdio)
 
 ▶ validate_gstin {"gstin":"29AAGCB7383J1Z5"}
     result             ✘ NOT well-formed
     why                The check character is wrong: it should be 4, not 5.
     decoded            Karnataka · PAN AAGCB7383J · Company
-    (0.5 ms, answered offline over stdio)
+    (0.3 ms, answered offline over stdio)
 
 ── 2. PAN, Aadhaar (format only), IFSC ──
 
@@ -48,19 +48,19 @@ tools: validate_gstin, validate_pan, validate_aadhaar_format, validate_ifsc
 
 ▶ lookup_pincode {"pincode":"302001"}
     place              Jaipur, Rajasthan
-    post offices       7 (C.P.M.G S.O, Chandpole Bazar S.O…)
-    data as of         2019-05-30
-    (20.5 ms, answered offline over stdio)
+    post offices       7 (Jaipur G.P.O., Chandpole Bazar…)
+    data as of         2026-11-07
+    (15.1 ms, answered offline over stdio)
 
 ▶ state_info {"query":"27"}
     state              Maharashtra (state)
     RTO prefix         MH
     QRMP GSTR-3B day   22
-    (0.6 ms, answered offline over stdio)
+    (0.5 ms, answered offline over stdio)
 
 ▶ india_holidays {"date":"2026-11-08"}
     central holiday?   Diwali (Deepavali)
-    (1.1 ms, answered offline over stdio)
+    (1.0 ms, answered offline over stdio)
 
 ── 4. What is due next? (GST, Karnataka, November 2026) ──
 
@@ -72,13 +72,13 @@ tools: validate_gstin, validate_pan, validate_aadhaar_format, validate_ifsc
     2026-11-20 Fri     GSTR-3B · CGST Rules
     2026-11-25 Wed     PMT-06 · CGST Rules
     status             starter set
-    (8.1 ms, answered offline over stdio)
+    (7.4 ms, answered offline over stdio)
 
 ── 5. Bad input is an error, not a guess ──
 
 ▶ compliance_deadlines {"from":"2026-02-30"}
     isError            true
     message            Dates must be real calendar dates in YYYY-MM-DD form.
-    (0.3 ms, answered offline over stdio)
+    (0.2 ms, answered offline over stdio)
 
 ✔ done — every answer above was calculated or read locally; no network was used.

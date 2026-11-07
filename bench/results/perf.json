@@ -1,5 +1,5 @@
 {
-  "measured_at": "2026-11-07T05:05:38.901Z",
+  "measured_at": "2026-11-07T05:20:19.248Z",
   "machine": {
     "node": "v26.12.1",
     "platform": "darwin arm64",
@@ -11,81 +11,81 @@
     {
       "name": "validate_gstin",
       "iterations": 200000,
-      "ops_per_sec": 1920322,
-      "micros_per_call": 0.5207460450000001
+      "ops_per_sec": 1913919,
+      "micros_per_call": 0.522488125
     },
     {
       "name": "validate_pan",
       "iterations": 200000,
-      "ops_per_sec": 6130339,
-      "micros_per_call": 0.16312312500000004
+      "ops_per_sec": 8649069,
+      "micros_per_call": 0.115619375
     },
     {
       "name": "validate_aadhaar_format",
       "iterations": 200000,
-      "ops_per_sec": 3174188,
-      "micros_per_call": 0.31504125000000005
+      "ops_per_sec": 3337856,
+      "micros_per_call": 0.2995935450000002
     },
     {
       "name": "validate_ifsc",
       "iterations": 200000,
-      "ops_per_sec": 7320867,
-      "micros_per_call": 0.13659583499999997
+      "ops_per_sec": 7491186,
+      "micros_per_call": 0.13349020999999994
     },
     {
       "name": "lookup_pincode",
       "iterations": 100000,
-      "ops_per_sec": 7567373,
-      "micros_per_call": 0.13214625000000013
+      "ops_per_sec": 5869793,
+      "micros_per_call": 0.17036374999999965
     },
     {
       "name": "state_info",
       "iterations": 100000,
-      "ops_per_sec": 121672,
-      "micros_per_call": 8.218805829999999
+      "ops_per_sec": 123075,
+      "micros_per_call": 8.125106249999998
     },
     {
       "name": "compliance_deadlines (31 days)",
       "iterations": 5000,
-      "ops_per_sec": 12757,
-      "micros_per_call": 78.39023339999999
+      "ops_per_sec": 14907,
+      "micros_per_call": 67.08235819999999
     }
   ],
   "over_stdio": {
-    "first_pincode_call_ms": 24.28087500000038,
+    "first_pincode_call_ms": 21.09683300000006,
     "calls": [
       {
         "name": "validate_gstin",
         "calls": 1000,
-        "p50_ms": 0.0656250000001819,
-        "p95_ms": 0.12362500000017462,
-        "p99_ms": 0.25483299999996234
+        "p50_ms": 0.05970800000022791,
+        "p95_ms": 0.10241700000005949,
+        "p99_ms": 0.14804099999992104
       },
       {
         "name": "lookup_pincode",
         "calls": 1000,
-        "p50_ms": 0.045625000000654836,
-        "p95_ms": 0.05804100000023027,
-        "p99_ms": 0.08299999999962893
+        "p50_ms": 0.043250000000170985,
+        "p95_ms": 0.05241699999987759,
+        "p99_ms": 0.07637500000009823
       },
       {
         "name": "compliance_deadlines",
         "calls": 300,
-        "p50_ms": 0.15579200000047422,
-        "p95_ms": 0.4004580000000715,
-        "p99_ms": 0.7959160000000338
+        "p50_ms": 0.14562500000010914,
+        "p95_ms": 0.3837499999999636,
+        "p99_ms": 0.7145829999999478
       }
     ],
-    "server_rss_mb_after_pincode_load": 151.453125,
+    "server_rss_mb_after_pincode_load": 132.234375,
     "cold_start_ms": {
-      "median": 227.90962499999978,
-      "p95": 418.7881669999997,
+      "median": 181.020708,
+      "p95": 226.1133749999999,
       "runs": 10
     }
   },
   "package": {
-    "tarball_kb": 911,
-    "unpacked_mb": 4.5,
+    "tarball_kb": 851,
+    "unpacked_mb": 3.2,
     "files": 40
   }
 }

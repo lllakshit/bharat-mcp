@@ -4,12 +4,13 @@ Each dataset is a JSON file in `data/` with its own `as_of` date, which the tool
 
 ## Pincodes (`data/pincodes.json`)
 
-- **Source:** All India Pincode Directory, India Post, published on the Open Government Data Platform India (data.gov.in). Obtained from a CKAN mirror of the 30 May 2019 file.
-- **Licence:** Government Open Data License - India (GODL-India), which permits reuse with attribution. Attribution: *Published under the Government Open Data License - India; data from India Post via data.gov.in.*
-- **As of:** 30 May 2019. This is old. Pincodes created after that date are not in the file, and a pincode that is "not found" may simply be newer.
-- **What was changed:** 155,599 post-office rows were grouped into 19,252 pincodes. State names that the source abbreviated or misspelled (for example "Chattisgarh", "Megalaya", "Andaman and Nico.In.") were mapped to today's names; "Daman and Diu" and "Dadra and Nagar Haveli" were merged to match the 2020 merger; the Leh and Kargil districts were moved from Jammu and Kashmir to Ladakh. District names are otherwise as in the source.
-- **Rebuild:** `node scripts/build-pincodes.mjs <csv> <as-of date>`.
-- **Licence check still open:** the licence was read from the CKAN mirror and the AIKosh listing. The data.gov.in catalogue page itself could not be opened when this was checked (it returned 403), so confirm its licence field before a public release.
+- **Source:** the GeoNames postal code file for India (`IN.zip` from https://download.geonames.org/export/zip/). GeoNames builds it from the India Post pincode list and adds place coordinates.
+- **Licence:** Creative Commons Attribution 4.0 (CC BY 4.0), stated in the file's own readme. It allows reuse, including commercial use, with credit. Credit line used here: *Postal code data from GeoNames (https://www.geonames.org), licensed CC BY 4.0.* It is repeated in the README and in every `lookup_pincode` answer.
+- **Downloaded:** 7 November 2026 (19,238 pincodes from 155,570 post-office rows).
+- **Why this source:** an earlier version used a 2019 copy of the India Post directory taken from a CKAN mirror. Its licence could not be confirmed on the data.gov.in page, so it was replaced with a source whose licence is explicit.
+- **What was changed:** rows were grouped by pincode. "Andaman & Nicobar Islands" and "Pondicherry" were mapped to today's names, and the Leh and Kargil districts, which the source lists under Jammu & Kashmir, were moved to Ladakh. District names are otherwise as in the source.
+- **Limits:** district names follow India Post and can be older than the official name (Allahabad for Prayagraj, Karimganj for Sribhumi), and a district can be a post-office division rather than a revenue district (for example `221405` is listed under Varanasi). A pincode created after the download is missing. GeoNames' own readme says the data is provided as is, without a warranty of accuracy or timeliness.
+- **Rebuild:** `node scripts/build-pincodes.mjs <IN.txt> <download date>`.
 
 ## States and union territories (`data/states.json`)
 

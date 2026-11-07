@@ -14,7 +14,7 @@ const nextYear = String(today.getUTCFullYear() + 1)
 if (today.getUTCMonth() >= 7 && !holidays.years[nextYear]) problems.push(`holidays.json has no ${nextYear} list yet. DoPT publishes it around July: add it.`)
 
 const pincodes = read("pincodes.json")._meta
-if (daysSince(pincodes.as_of) > 730) problems.push(`pincodes.json is from ${pincodes.as_of}. Look for a newer India Post directory on data.gov.in and rebuild it with scripts/build-pincodes.mjs.`)
+if (daysSince(pincodes.as_of) > 365) problems.push(`pincodes.json was downloaded ${daysSince(pincodes.as_of)} days ago (${pincodes.as_of}). Download the latest IN.zip from https://download.geonames.org/export/zip/ and rebuild it with scripts/build-pincodes.mjs.`)
 
 if (problems.length === 0) console.log("Data is fresh.")
 else {

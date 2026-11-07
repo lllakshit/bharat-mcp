@@ -16,14 +16,14 @@
     <text x="22" y="207" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">2026-11-20 Fri    </tspan><tspan> GSTR-3B </tspan><tspan style="opacity:.6">· CGST Rules</tspan></text>
     <text x="22" y="228" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">2026-11-25 Wed    </tspan><tspan> PMT-06 </tspan><tspan style="opacity:.6">· CGST Rules</tspan></text>
     <text x="22" y="249" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">status            </tspan><tspan> </tspan><tspan style="fill:#ffd43b">starter set</tspan></text>
-    <text x="22" y="270" xml:space="preserve"><tspan style="opacity:.6">    (8.1 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="270" xml:space="preserve"><tspan style="opacity:.6">    (7.4 ms, answered offline over stdio)</tspan></text>
     <text x="22" y="291" xml:space="preserve"></text>
     <text x="22" y="312" xml:space="preserve"><tspan>── 5. Bad input is an error, not a guess ──</tspan></text>
     <text x="22" y="333" xml:space="preserve"></text>
     <text x="22" y="354" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">compliance_deadlines</tspan><tspan> </tspan><tspan style="opacity:.6">{"from":"2026-02-30"}</tspan></text>
     <text x="22" y="375" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">isError           </tspan><tspan> </tspan><tspan style="fill:#69db7c">true</tspan></text>
     <text x="22" y="396" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">message           </tspan><tspan> </tspan><tspan style="fill:#ffd43b">Dates must be real calendar dates in YYYY-MM-DD form.</tspan></text>
-    <text x="22" y="417" xml:space="preserve"><tspan style="opacity:.6">    (0.3 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="417" xml:space="preserve"><tspan style="opacity:.6">    (0.2 ms, answered offline over stdio)</tspan></text>
     <text x="22" y="438" xml:space="preserve"></text>
     <text x="22" y="459" xml:space="preserve"><tspan style="fill:#69db7c">✔</tspan><tspan> </tspan><tspan style="font-weight:700">done</tspan><tspan> </tspan><tspan style="opacity:.6">— every answer above was calculated or read locally; no network was used.</tspan></text>
   </g>

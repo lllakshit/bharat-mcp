@@ -59,7 +59,7 @@ export const tools = [
     name: "lookup_pincode",
     title: "Look up an Indian pincode",
     description:
-      "Returns the state, district, postal circle and post offices for a 6-digit Indian pincode from the bundled India Post directory. The directory is dated (see data_as_of), so a pincode created after that date will not be found.",
+      "Returns the state, district and post offices for a 6-digit Indian pincode from the bundled GeoNames postal-code list (CC BY 4.0, built from the India Post list). District names can be older than the current official name, and a pincode created after the data date (see data_as_of) will not be found.",
     inputSchema: { pincode: z.string().min(1).max(12).describe("The 6-digit pincode") },
     run: ({ pincode }) => lookupPincode(pincode),
   }),

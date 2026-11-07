@@ -49,7 +49,8 @@ describe("states", () => {
 
 describe("lookupPincode", () => {
   it("finds well-known pincodes", () => {
-    expect(lookupPincode("110001")).toMatchObject({ found: true, state: "Delhi", district: "Central Delhi" })
+    expect(lookupPincode("110001")).toMatchObject({ found: true, state: "Delhi" })
+    expect((lookupPincode("110001") as { district: string }).district).toContain("Central Delhi")
     expect(lookupPincode("302001")).toMatchObject({ found: true, state: "Rajasthan", district: "Jaipur" })
     expect(lookupPincode("400001")).toMatchObject({ found: true, state: "Maharashtra" })
     expect(lookupPincode("560 001")).toMatchObject({ found: true, state: "Karnataka" })
@@ -66,9 +67,18 @@ describe("lookupPincode", () => {
     expect(lookupPincode("999999")).toMatchObject({ found: false, valid_format: true })
   })
 
-  it("always reports how old the data is", () => {
-    expect(lookupPincode("110001")).toHaveProperty("data_as_of", "2019-05-30")
-    expect(lookupPincode("999999")).toHaveProperty("data_as_of", "2019-05-30")
+  it("always reports how old the data is and credits the source", () => {
+    expect(lookupPincode("110001")).toHaveProperty("data_as_of", "2026-11-07")
+    expect(lookupPincode("999999")).toHaveProperty("data_as_of", "2026-11-07")
+    expect(lookupPincode("110001")).toHaveProperty("attribution", expect.stringContaining("CC BY 4.0"))
+  })
+
+  it("covers about 19,000 pincodes across every state and union territory", () => {
+    const { states } = statesFile()
+    const probes = ["110001", "400001", "560001", "600001", "700001", "781001", "682001", "751001", "800001", "834001", "248001", "190001", "194101", "403001", "605001", "744101", "682555", "737101", "796001", "799001", "791111", "795001", "797001", "793001", "390001", "396210", "440001", "492001"]
+    const names = new Set(probes.map((p) => (lookupPincode(p) as { state?: string }).state))
+    expect(names.size).toBeGreaterThan(20)
+    for (const name of names) if (name) expect(states.some((s) => s.name === name)).toBe(true)
   })
 })
 

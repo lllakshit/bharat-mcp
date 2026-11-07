@@ -2,14 +2,14 @@ import { loadData } from "./data/loader.js"
 import { statesFile } from "./data/states.js"
 
 type PincodeFile = {
-  _meta: { as_of: string; source: string; licence: string; count: number }
-  records: Record<string, { state: string; district: string; circle: string; offices: string[]; delivery: boolean }>
+  _meta: { as_of: string; source: string; licence: string; attribution: string; count: number }
+  records: Record<string, { state: string; district: string; offices: string[] }>
 }
 
 const file = () => loadData<PincodeFile>("pincodes.json")
 
 export type PincodeResult =
-  | { found: true; pincode: string; state: string; district: string; postal_circle: string; post_offices: string[]; has_delivery_office: boolean; postal_zone: string; data_as_of: string; source: string; note: string }
+  | { found: true; pincode: string; state: string; district: string; post_offices: string[]; postal_zone: string; data_as_of: string; source: string; attribution: string; note: string }
   | { found: false; pincode: string; valid_format: boolean; reason: string; postal_zone?: string; data_as_of: string }
 
 export function lookupPincode(input: string): PincodeResult {
@@ -26,7 +26,7 @@ export function lookupPincode(input: string): PincodeResult {
       found: false,
       pincode,
       valid_format: true,
-      reason: `Not in the bundled directory (data as of ${asOf}). It may be newer than the data, or not assigned.`,
+      reason: `Not in the bundled list (downloaded ${asOf}). It may be newer than the data, or not assigned.`,
       postal_zone: zone,
       data_as_of: asOf,
     }
@@ -36,13 +36,12 @@ export function lookupPincode(input: string): PincodeResult {
     pincode,
     state: record.state,
     district: record.district,
-    postal_circle: record.circle,
     post_offices: record.offices,
-    has_delivery_office: record.delivery,
     postal_zone: zone ?? "",
     data_as_of: asOf,
     source: data._meta.source,
-    note: "State and district follow the names in the 2019 directory, mapped to today's state names. District names may have changed since.",
+    attribution: data._meta.attribution,
+    note: "State names are today's. District names follow the India Post list and can be older than the current official name (for example Allahabad, now Prayagraj). Credit: GeoNames, CC BY 4.0.",
   }
 }
 

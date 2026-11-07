@@ -7,13 +7,13 @@
 [36m▶[0m [1mvalidate_gstin[0m [2m{"gstin":"29AAGCB7383J1Z4"}[0m
     [2mresult            [0m [32m✔ well-formed[0m
     [2mdecoded           [0m Karnataka · PAN AAGCB7383J · Company
-[2m    (2.7 ms, answered offline over stdio)[0m
+[2m    (2.3 ms, answered offline over stdio)[0m
 
 [36m▶[0m [1mvalidate_gstin[0m [2m{"gstin":"29AAGCB7383J1Z5"}[0m
     [2mresult            [0m [31m✘ NOT well-formed[0m
     [2mwhy               [0m [33mThe check character is wrong: it should be 4, not 5.[0m
     [2mdecoded           [0m Karnataka · PAN AAGCB7383J · Company
-[2m    (0.5 ms, answered offline over stdio)[0m
+[2m    (0.3 ms, answered offline over stdio)[0m
 [1m
 ── 2. PAN, Aadhaar (format only), IFSC ──[0m
 
@@ -48,19 +48,19 @@
 
 [36m▶[0m [1mlookup_pincode[0m [2m{"pincode":"302001"}[0m
     [2mplace             [0m Jaipur, Rajasthan
-    [2mpost offices      [0m 7 (C.P.M.G S.O, Chandpole Bazar S.O…)
-    [2mdata as of        [0m [33m2019-05-30[0m
-[2m    (20.5 ms, answered offline over stdio)[0m
+    [2mpost offices      [0m 7 (Jaipur G.P.O., Chandpole Bazar…)
+    [2mdata as of        [0m [33m2026-11-07[0m
+[2m    (15.1 ms, answered offline over stdio)[0m
 
 [36m▶[0m [1mstate_info[0m [2m{"query":"27"}[0m
     [2mstate             [0m Maharashtra (state)
     [2mRTO prefix        [0m MH
     [2mQRMP GSTR-3B day  [0m 22
-[2m    (0.6 ms, answered offline over stdio)[0m
+[2m    (0.5 ms, answered offline over stdio)[0m
 
 [36m▶[0m [1mindia_holidays[0m [2m{"date":"2026-11-08"}[0m
     [2mcentral holiday?  [0m [32mDiwali (Deepavali)[0m
-[2m    (1.1 ms, answered offline over stdio)[0m
+[2m    (1.0 ms, answered offline over stdio)[0m
 [1m
 ── 4. What is due next? (GST, Karnataka, November 2026) ──[0m
 
@@ -72,13 +72,13 @@
     [2m2026-11-20 Fri    [0m GSTR-3B [2m· CGST Rules[0m
     [2m2026-11-25 Wed    [0m PMT-06 [2m· CGST Rules[0m
     [2mstatus            [0m [33mstarter set[0m
-[2m    (8.1 ms, answered offline over stdio)[0m
+[2m    (7.4 ms, answered offline over stdio)[0m
 [1m
 ── 5. Bad input is an error, not a guess ──[0m
 
 [36m▶[0m [1mcompliance_deadlines[0m [2m{"from":"2026-02-30"}[0m
     [2misError           [0m [32mtrue[0m
     [2mmessage           [0m [33mDates must be real calendar dates in YYYY-MM-DD form.[0m
-[2m    (0.3 ms, answered offline over stdio)[0m
+[2m    (0.2 ms, answered offline over stdio)[0m
 
 [32m✔[0m [1mdone[0m [2m— every answer above was calculated or read locally; no network was used.[0m

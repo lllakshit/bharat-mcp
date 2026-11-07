@@ -9,22 +9,22 @@
     <text x="22" y="60" xml:space="preserve"><tspan>Machine: Apple M1, 8 cores, 16 GB, darwin arm64, Node v26.12.1</tspan></text>
     <text x="22" y="81" xml:space="preserve"></text>
     <text x="22" y="102" xml:space="preserve"><tspan>In-process (the functions, no MCP):</tspan></text>
-    <text x="22" y="123" xml:space="preserve"><tspan>  validate_gstin                        1,920,322 calls/s        0.52 µs each</tspan></text>
-    <text x="22" y="144" xml:space="preserve"><tspan>  validate_pan                          6,130,339 calls/s        0.16 µs each</tspan></text>
-    <text x="22" y="165" xml:space="preserve"><tspan>  validate_aadhaar_format               3,174,188 calls/s        0.32 µs each</tspan></text>
-    <text x="22" y="186" xml:space="preserve"><tspan>  validate_ifsc                         7,320,867 calls/s        0.14 µs each</tspan></text>
-    <text x="22" y="207" xml:space="preserve"><tspan>  lookup_pincode                        7,567,373 calls/s        0.13 µs each</tspan></text>
-    <text x="22" y="228" xml:space="preserve"><tspan>  state_info                              121,672 calls/s        8.22 µs each</tspan></text>
-    <text x="22" y="249" xml:space="preserve"><tspan>  compliance_deadlines (31 days)           12,757 calls/s       78.39 µs each</tspan></text>
+    <text x="22" y="123" xml:space="preserve"><tspan>  validate_gstin                        1,913,919 calls/s        0.52 µs each</tspan></text>
+    <text x="22" y="144" xml:space="preserve"><tspan>  validate_pan                          8,649,069 calls/s        0.12 µs each</tspan></text>
+    <text x="22" y="165" xml:space="preserve"><tspan>  validate_aadhaar_format               3,337,856 calls/s        0.30 µs each</tspan></text>
+    <text x="22" y="186" xml:space="preserve"><tspan>  validate_ifsc                         7,491,186 calls/s        0.13 µs each</tspan></text>
+    <text x="22" y="207" xml:space="preserve"><tspan>  lookup_pincode                        5,869,793 calls/s        0.17 µs each</tspan></text>
+    <text x="22" y="228" xml:space="preserve"><tspan>  state_info                              123,075 calls/s        8.13 µs each</tspan></text>
+    <text x="22" y="249" xml:space="preserve"><tspan>  compliance_deadlines (31 days)           14,907 calls/s       67.08 µs each</tspan></text>
     <text x="22" y="270" xml:space="preserve"></text>
     <text x="22" y="291" xml:space="preserve"><tspan>Over stdio (a real MCP client talking to the server):</tspan></text>
-    <text x="22" y="312" xml:space="preserve"><tspan>  cold start to tool list (median of 10): 228 ms (p95 419 ms)</tspan></text>
-    <text x="22" y="333" xml:space="preserve"><tspan>  first lookup_pincode (reads the 4.4 MB data file once): 24.3 ms</tspan></text>
-    <text x="22" y="354" xml:space="preserve"><tspan>  validate_gstin         p50   0.07 ms   p95   0.12 ms   p99   0.25 ms   (1000 calls)</tspan></text>
-    <text x="22" y="375" xml:space="preserve"><tspan>  lookup_pincode         p50   0.05 ms   p95   0.06 ms   p99   0.08 ms   (1000 calls)</tspan></text>
-    <text x="22" y="396" xml:space="preserve"><tspan>  compliance_deadlines   p50   0.16 ms   p95   0.40 ms   p99   0.80 ms   (300 calls)</tspan></text>
-    <text x="22" y="417" xml:space="preserve"><tspan>  server memory after loading all data: 151 MB</tspan></text>
+    <text x="22" y="312" xml:space="preserve"><tspan>  cold start to tool list (median of 10): 181 ms (p95 226 ms)</tspan></text>
+    <text x="22" y="333" xml:space="preserve"><tspan>  first lookup_pincode (reads the 4.4 MB data file once): 21.1 ms</tspan></text>
+    <text x="22" y="354" xml:space="preserve"><tspan>  validate_gstin         p50   0.06 ms   p95   0.10 ms   p99   0.15 ms   (1000 calls)</tspan></text>
+    <text x="22" y="375" xml:space="preserve"><tspan>  lookup_pincode         p50   0.04 ms   p95   0.05 ms   p99   0.08 ms   (1000 calls)</tspan></text>
+    <text x="22" y="396" xml:space="preserve"><tspan>  compliance_deadlines   p50   0.15 ms   p95   0.38 ms   p99   0.71 ms   (300 calls)</tspan></text>
+    <text x="22" y="417" xml:space="preserve"><tspan>  server memory after loading all data: 132 MB</tspan></text>
     <text x="22" y="438" xml:space="preserve"></text>
-    <text x="22" y="459" xml:space="preserve"><tspan>Package: 911 KB download, 4.5 MB unpacked, 40 files</tspan></text>
+    <text x="22" y="459" xml:space="preserve"><tspan>Package: 851 KB download, 3.2 MB unpacked, 40 files</tspan></text>
   </g>
 </svg>

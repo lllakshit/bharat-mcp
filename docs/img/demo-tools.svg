@@ -39,18 +39,18 @@
     <text x="22" y="690" xml:space="preserve"></text>
     <text x="22" y="711" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">lookup_pincode</tspan><tspan> </tspan><tspan style="opacity:.6">{"pincode":"302001"}</tspan></text>
     <text x="22" y="732" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">place             </tspan><tspan> Jaipur, Rajasthan</tspan></text>
-    <text x="22" y="753" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">post offices      </tspan><tspan> 7 (C.P.M.G S.O, Chandpole Bazar S.O…)</tspan></text>
-    <text x="22" y="774" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">data as of        </tspan><tspan> </tspan><tspan style="fill:#ffd43b">2019-05-30</tspan></text>
-    <text x="22" y="795" xml:space="preserve"><tspan style="opacity:.6">    (20.5 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="753" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">post offices      </tspan><tspan> 7 (Jaipur G.P.O., Chandpole Bazar…)</tspan></text>
+    <text x="22" y="774" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">data as of        </tspan><tspan> </tspan><tspan style="fill:#ffd43b">2026-11-07</tspan></text>
+    <text x="22" y="795" xml:space="preserve"><tspan style="opacity:.6">    (15.1 ms, answered offline over stdio)</tspan></text>
     <text x="22" y="816" xml:space="preserve"></text>
     <text x="22" y="837" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">state_info</tspan><tspan> </tspan><tspan style="opacity:.6">{"query":"27"}</tspan></text>
     <text x="22" y="858" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">state             </tspan><tspan> Maharashtra (state)</tspan></text>
     <text x="22" y="879" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">RTO prefix        </tspan><tspan> MH</tspan></text>
     <text x="22" y="900" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">QRMP GSTR-3B day  </tspan><tspan> 22</tspan></text>
-    <text x="22" y="921" xml:space="preserve"><tspan style="opacity:.6">    (0.6 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="921" xml:space="preserve"><tspan style="opacity:.6">    (0.5 ms, answered offline over stdio)</tspan></text>
     <text x="22" y="942" xml:space="preserve"></text>
     <text x="22" y="963" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">india_holidays</tspan><tspan> </tspan><tspan style="opacity:.6">{"date":"2026-11-08"}</tspan></text>
     <text x="22" y="984" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">central holiday?  </tspan><tspan> </tspan><tspan style="fill:#69db7c">Diwali (Deepavali)</tspan></text>
-    <text x="22" y="1005" xml:space="preserve"><tspan style="opacity:.6">    (1.1 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="1005" xml:space="preserve"><tspan style="opacity:.6">    (1.0 ms, answered offline over stdio)</tspan></text>
   </g>
 </svg>

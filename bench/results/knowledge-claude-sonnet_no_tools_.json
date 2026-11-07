@@ -116,7 +116,7 @@
       "pin": "263634",
       "truth": {
         "state": "Uttarakhand",
-        "district": "Bageshwar / Almora"
+        "district": "Bageshwar"
       },
       "answer": {
         "state": "Uttarakhand",
@@ -129,7 +129,7 @@
       "pin": "361325",
       "truth": {
         "state": "Gujarat",
-        "district": "Devbhoomi Dwerka / Jamnagar"
+        "district": "Jamnagar"
       },
       "answer": {
         "state": "Gujarat",
@@ -350,7 +350,7 @@
       "pin": "761125",
       "truth": {
         "state": "Odisha",
-        "district": "Ganjam / Kandhamal"
+        "district": "Ganjam"
       },
       "answer": {
         "state": "Odisha",
@@ -363,7 +363,7 @@
       "pin": "783301",
       "truth": {
         "state": "Assam",
-        "district": "Bongaigaon / Dhubri"
+        "district": "Dhubri"
       },
       "answer": {
         "state": "Assam",

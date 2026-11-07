@@ -40,7 +40,7 @@ So, to be straightforward about it: **current Claude models are mostly right on 
 | `validate_pan` | Shape plus holder type (individual, company, firm, HUF, trust and so on) | yes |
 | `validate_aadhaar_format` | Format and Verhoeff checksum **only**. Nothing is stored or looked up; only the last 4 digits are returned | yes |
 | `validate_ifsc` | IFSC format and bank code, with the bank name for well-known banks | yes |
-| `lookup_pincode` | State, district, postal circle and post offices for a 6-digit pincode | yes (bundled data) |
+| `lookup_pincode` | State, district and post offices for a 6-digit pincode | yes (bundled data) |
 | `state_info` | State and union territory by name, GST code, ISO code or RTO prefix; QRMP GSTR-3B due-day group | yes |
 | `india_holidays` | Central Government closed holidays for 2026 and 2027, or check one date | yes |
 | `compliance_deadlines` | GST, TDS, advance tax, EPF/ESI and ROC due dates in a date range, with legal basis and authority | yes |
@@ -102,19 +102,19 @@ Measured on Apple M1 (8 cores, 16 GB, darwin arm64, Node v26.12.1) with `npm run
 
 | | |
 |---|---|
-| `validate_gstin`, in-process | 1,920,322 calls/s (0.52 µs each) |
-| `validate_gstin`, over stdio | p50 0.07 ms, p99 0.25 ms |
-| `lookup_pincode`, over stdio | p50 0.05 ms (first call 24 ms, which reads the data file once) |
-| `compliance_deadlines`, over stdio | p50 0.16 ms |
-| Cold start to tool list | 228 ms median |
-| Memory after loading all data | about 151 MB |
-| Package | 911 KB download, 4.5 MB unpacked, 40 files |
+| `validate_gstin`, in-process | 1,913,919 calls/s (0.52 µs each) |
+| `validate_gstin`, over stdio | p50 0.06 ms, p99 0.15 ms |
+| `lookup_pincode`, over stdio | p50 0.04 ms (first call 21 ms, which reads the data file once) |
+| `compliance_deadlines`, over stdio | p50 0.15 ms |
+| Cold start to tool list | 181 ms median |
+| Memory after loading all data | about 132 MB |
+| Package | 851 KB download, 3.2 MB unpacked, 40 files |
 
 These are one machine and one run. Treat them as the order of magnitude, not a guarantee.
 
 ## Tests
 
-57 tests cover the validators (including every single-character mistake in the sample GSTINs and Aadhaar numbers), the data, the date logic and the MCP server end to end. CI runs them on Node 22 and 24, runs the built server on Node 18 and 20, and audits the dependencies.
+58 tests cover the validators (including every single-character mistake in the sample GSTINs and Aadhaar numbers), the data, the date logic and the MCP server end to end. CI runs them on Node 22 and 24, runs the built server on Node 18 and 20, and audits the dependencies.
 
 ![Test run](docs/img/tests.svg)
 
@@ -124,7 +124,7 @@ Short version; the full detail is in [DATA-SOURCES.md](DATA-SOURCES.md).
 
 | Data | Source | As of | Limit |
 |---|---|---|---|
-| Pincodes | India Post All India Pincode Directory (data.gov.in), listed as Government Open Data License - India on the mirror it was taken from | 30 May 2019 | Old. Pincodes created since are missing. District names are as in 2019 (for example Allahabad, not Prayagraj). |
+| Pincodes | [GeoNames](https://www.geonames.org) postal codes for India, **CC BY 4.0**, built from the India Post list | downloaded 7 Nov 2026 | District names follow India Post and can be older than the official name (for example Allahabad, now Prayagraj). A pincode created after the download is missing. |
 | States, GST codes, RTO prefixes | CBIC/GSTN GST state codes, ISO 3166-2:IN, MoRTH series | 7 Nov 2026 | Hand-curated |
 | Holidays | DoPT orders for 2026 (dated 3 Jul 2025) and 2027 (dated 16 Jul 2026; checked against the official memorandum) | 7 Nov 2026 | Central Government (Delhi) closed holidays only. No state, bank or stock-exchange holidays. Moon-dependent dates can shift. |
 | Compliance deadlines | Statutory due dates under the CGST Rules, Income-tax rules, EPF/ESI and Companies Act | 7 Nov 2026 | **Starter set.** Standard dates only; government extensions are not included. Checked against secondary calendars, not yet line by line against each notification, so every entry is marked `medium` confidence. |
@@ -144,7 +144,7 @@ Every tool result carries its own `note` or `data_as_of`, so a model reading the
 
 ```bash
 npm install && npm run build
-npm test                          # 57 tests
+npm test                          # 58 tests
 npm run demo                      # the terminal tour above
 npm run bench                     # speed and size
 python3 bench/crosscheck.py       # independent Python checksum vs this package, 20,000 strings
@@ -165,7 +165,7 @@ npm run build
 npm run smoke     # starts the built server over stdio and calls it
 ```
 
-Rebuild the pincode file from a CSV: `node scripts/build-pincodes.mjs path/to/pincode.csv 2019-05-30`.
+Rebuild the pincode file from GeoNames: download `IN.zip` from https://download.geonames.org/export/zip/, unzip it, then `node scripts/build-pincodes.mjs path/to/IN.txt`.
 
 ## Contributing
 
@@ -178,3 +178,5 @@ Issues and pull requests are welcome, especially:
 ## Licence
 
 Code: [MIT](LICENSE). Bundled data keeps the licence of its source; see [DATA-SOURCES.md](DATA-SOURCES.md).
+
+Postal code data: © [GeoNames](https://www.geonames.org), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

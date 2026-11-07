@@ -1,75 +1,34 @@
-// Builds data/pincodes.json from the All India Pincode Directory CSV (India Post, published on data.gov.in under
-// the Government Open Data License - India). Usage: node scripts/build-pincodes.mjs path/to/pincode.csv [as-of-date]
+// Builds data/pincodes.json from the GeoNames postal code file for India (IN.txt from https://download.geonames.org/export/zip/IN.zip),
+// which is licensed Creative Commons Attribution 4.0. Usage: node scripts/build-pincodes.mjs path/to/IN.txt [download-date]
 import { readFileSync, writeFileSync } from "node:fs"
 
-const [, , csvPath, asOf = "2019-05-30"] = process.argv
-if (!csvPath) {
-  console.error("Usage: node scripts/build-pincodes.mjs path/to/pincode.csv [as-of-date]")
+const [, , tsvPath, downloaded = new Date().toISOString().slice(0, 10)] = process.argv
+if (!tsvPath) {
+  console.error("Usage: node scripts/build-pincodes.mjs path/to/IN.txt [download-date]")
   process.exit(1)
 }
 
-function parseCsv(text) {
-  const rows = []
-  let row = []
-  let field = ""
-  let quoted = false
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i]
-    if (quoted) {
-      if (c === '"' && text[i + 1] === '"') (field += '"'), i++
-      else if (c === '"') quoted = false
-      else field += c
-    } else if (c === '"') quoted = true
-    else if (c === ",") (row.push(field), (field = ""))
-    else if (c === "\n" || c === "\r") {
-      if (c === "\r" && text[i + 1] === "\n") i++
-      row.push(field)
-      field = ""
-      if (row.length > 1) rows.push(row)
-      row = []
-    } else field += c
-  }
-  if (field || row.length) (row.push(field), rows.push(row))
-  return rows
-}
-
-const title = (value) =>
-  value
-    .toLowerCase()
-    .replace(/\b([a-z])/g, (m) => m.toUpperCase())
-    .replace(/\bAnd\b/g, "and")
-    .replace(/\bOf\b/g, "of")
-    .trim()
-
-// The source spells some states in short or old forms. Map them to today's names; Ladakh was part of Jammu and Kashmir in 2019.
-const STATE_FIX = {
-  "Andaman and Nico.In.": "Andaman and Nicobar Islands",
-  Chattisgarh: "Chhattisgarh",
-  "Dadra and Nagar Hav.": "Dadra and Nagar Haveli and Daman and Diu",
-  "Daman and Diu": "Dadra and Nagar Haveli and Daman and Diu",
-  Megalaya: "Meghalaya",
-  Pondicherry: "Puducherry",
-}
-const LADAKH_DISTRICTS = new Set(["Leh", "Kargil", "Leh Ladakh", "Leh (Ladakh)"])
+// GeoNames spells a few states differently, and Ladakh sits under Jammu & Kashmir. Map them to today's names.
+const STATE_FIX = { "Andaman & Nicobar Islands": "Andaman and Nicobar Islands", Pondicherry: "Puducherry" }
+const LADAKH_DISTRICTS = new Set(["Leh", "Kargil"])
 const canonicalState = (state, district) =>
-  state === "Jammu and Kashmir" && LADAKH_DISTRICTS.has(district) ? "Ladakh" : (STATE_FIX[state] ?? state)
+  state === "Jammu & Kashmir" ? (LADAKH_DISTRICTS.has(district) ? "Ladakh" : "Jammu and Kashmir") : (STATE_FIX[state] ?? state)
 
-const [header, ...rows] = parseCsv(readFileSync(csvPath, "utf8").replace(/^﻿/, ""))
-const col = Object.fromEntries(header.map((name, index) => [name.trim().toLowerCase(), index]))
-for (const need of ["pincode", "office name", "district", "statename", "circle name", "officetype", "delivery"]) {
-  if (!(need in col)) throw new Error(`Missing column: ${need}`)
-}
-
+const known = new Set(JSON.parse(readFileSync(new URL("../data/states.json", import.meta.url), "utf8")).states.map((s) => s.name))
 const records = {}
-for (const r of rows) {
-  const pin = r[col.pincode]?.trim()
+let rows = 0
+for (const line of readFileSync(tsvPath, "utf8").split("\n")) {
+  const c = line.split("\t")
+  const pin = c[1]?.trim()
   if (!/^[1-9][0-9]{5}$/.test(pin ?? "")) continue
-  const rec = (records[pin] ??= { state: canonicalState(title(r[col.statename]), title(r[col.district])), district: title(r[col.district]), circle: r[col["circle name"]].trim(), offices: [], delivery: false })
-  const office = r[col["office name"]].trim()
-  if (!rec.offices.includes(office)) rec.offices.push(office)
-  if (r[col.delivery].trim().toLowerCase() === "delivery") rec.delivery = true
-  const district = title(r[col.district])
-  if (district && !rec.district.split(" / ").includes(district)) rec.district += ` / ${district}`
+  rows++
+  const district = (c[5] ?? "").trim()
+  const state = canonicalState((c[3] ?? "").trim(), district)
+  if (!known.has(state)) throw new Error(`Unmapped state "${c[3]}" for ${pin}`)
+  const rec = (records[pin] ??= { state, district, offices: [] })
+  const office = (c[2] ?? "").trim()
+  if (office && !rec.offices.includes(office)) rec.offices.push(office)
+  if (district && !rec.district.split(" / ").includes(district)) rec.district = rec.district ? `${rec.district} / ${district}` : district
 }
 
 const sorted = Object.fromEntries(Object.entries(records).sort(([a], [b]) => a.localeCompare(b)))
@@ -78,12 +37,13 @@ writeFileSync(
   JSON.stringify({
     _meta: {
       dataset: "pincodes",
-      as_of: asOf,
-      source: "All India Pincode Directory, India Post, via data.gov.in (Open Government Data Platform India)",
-      licence: "Government Open Data License - India (GODL-India)",
+      as_of: downloaded,
+      source: "GeoNames postal codes for India (geonames.org), built from the India Post pincode list",
+      licence: "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      attribution: "Postal code data from GeoNames (https://www.geonames.org), licensed CC BY 4.0",
       count: Object.keys(sorted).length,
     },
     records: sorted,
   }),
 )
-console.log(`Wrote ${Object.keys(sorted).length} pincodes from ${rows.length} rows`)
+console.log(`Wrote ${Object.keys(sorted).length} pincodes from ${rows} rows`)
