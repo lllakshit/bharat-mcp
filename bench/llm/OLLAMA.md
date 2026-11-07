@@ -33,7 +33,7 @@ The default endpoint is `http://127.0.0.1:11434`. Override it with `--host http:
 
 ## Test the harness without Ollama
 
-This stand-in mode is only for checking the runner, scoring, result serialization and tool path. It is not a model evaluation:
+This stand-in mode is only for checking the runner, scoring and result serialization. It is not a model evaluation:
 
 ```bash
 npm run build
