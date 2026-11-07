@@ -31,6 +31,18 @@ npm run bench:ollama -- --model qwen3:8b --arm without --limit 5
 
 The default endpoint is `http://127.0.0.1:11434`. Override it with `--host http://host:11434` or the `OLLAMA_HOST` environment variable.
 
+## What the runner does for you
+
+- **Checks first.** It stops with a plain message if Ollama is not running, if the model is not installed (`ollama pull <model>`), or if the model does not list tool-calling support (the `with` arm cannot work without it; `--arm without` still runs).
+- **Repeatable.** Temperature 0 and a fixed seed (7) are sent with every request, and written into the result file.
+- **Reasoning models.** Text inside `<think>...</think>` is ignored; the verdict is read from what follows.
+- **Time limit.** Each request gives up after 5 minutes instead of hanging.
+- **Output folder.** Results go to `bench/results/`; use `--out-dir <folder>` to write elsewhere.
+
+## What has and has not been tested
+
+The runner is covered by `tests/ollama-bench.test.ts`, which starts a small stand-in server with Ollama's HTTP routes and checks the whole path: both arms, the MCP tool call, `<think>` handling and each error message. **It has not been run against a real Ollama model yet.** Real models may behave differently (for example, a different shape of tool-call arguments), so treat the first real run as a check of the runner too.
+
 ## Test the harness without Ollama
 
 This stand-in mode is only for checking the runner, scoring and result serialization. It is not a model evaluation:
@@ -40,7 +52,7 @@ npm run build
 npm run bench:ollama -- --model stand-in --mock --limit 5
 ```
 
-Results are written to `bench/results/`. Mock results are explicitly marked as harness-only. Do not compare them with real model results or report them as Ollama performance.
+Results are written to `bench/results/`. Mock result files start with `MOCK-` (git ignores them) and are marked as harness-only. Do not compare them with real model results or report them as Ollama performance.
 
 ## Interpretation
 

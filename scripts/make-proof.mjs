@@ -16,9 +16,18 @@ const strip = (t) => t.replace(/\x1b\[[0-9;]*m/g, "")
 const save = (name, text) => (writeFileSync(`docs/proof/${name}.ansi.txt`, text), writeFileSync(`docs/proof/${name}.txt`, strip(text)))
 const render = (name, out, title, ...markers) => execFileSync("node", ["scripts/render-proof.mjs", `docs/proof/${name}.ansi.txt`, `docs/img/${out}.svg`, title, ...markers], { stdio: "inherit" })
 
+// `node scripts/make-proof.mjs tests` redoes only the test screenshot; with no argument everything is redone.
+const only = process.argv[2]
+const want = (name) => !only || only === name
+
 run("npm", ["run", "build"])
-save("tests", run("npx", ["vitest", "run", "--reporter=verbose"], { NO_COLOR: "" }))
-render("tests", "tests", "npm test · 57 tests, all passing")
+if (want("tests")) {
+  const output = run("npx", ["vitest", "run", "--reporter=verbose"], { NO_COLOR: "" })
+  save("tests", output)
+  const count = /Tests\s+(\d+) passed/.exec(strip(output))?.[1] ?? "?"
+  render("tests", "tests", `npm test · ${count} tests, all passing`)
+}
+if (only === "tests") process.exit(0)
 
 save("demo", run("node", ["scripts/demo.mjs"]))
 render("demo", "demo-gstin", "bharat-mcp · real GSTIN vs a fake one (1 character different)", "bharat-mcp ·", "── 2.")

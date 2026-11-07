@@ -32,6 +32,12 @@ So, to be straightforward about it: **current Claude models are mostly right on 
 
 **How the model runs were made, and their limits.** Each model was a fresh Claude Code subagent given one prompt with all the questions and told not to use tools, code, files or the web. The transcripts were checked afterwards: the only tool call in every run was the one that returns the answer. Limits: all 40 GSTINs went into one prompt (a single casual question may behave differently); only Claude models were tested; 40 questions is a small sample (one mistake is 2.5 points); and the tool's own data cannot be used to prove the tool right, which is why Test 2 has no score for it. The raw answers and scored results are in [`bench/results/`](bench/results/) and the method is in [`bench/llm/`](bench/llm/). To test your own model: `npm run bench:llm -- --backend api --model <model-id>` (needs `ANTHROPIC_API_KEY` in your shell). That runner is tested with a stand-in model only; the Claude results above were produced the way described here, not with it.
 
+### Try it on your own model (including local ones through Ollama)
+
+`npm run bench:llm` runs the GSTIN test against an Anthropic model, and `npm run bench:ollama -- --model <name>` runs it against a model served by [Ollama](https://ollama.com) (it needs a model with tool-calling support). Both compare the model on its own with the model plus bharat-mcp. See [`bench/llm/OLLAMA.md`](bench/llm/OLLAMA.md).
+
+I have **not** run this on a real Ollama model yet; the runner is tested against a stand-in server only. If you run it, please open an issue with the result.
+
 ## Tools
 
 | Tool | What it does | Works offline |
@@ -116,7 +122,7 @@ These are one machine and one run. Treat them as the order of magnitude, not a g
 
 ## Tests
 
-58 tests cover the validators (including every single-character mistake in the sample GSTINs and Aadhaar numbers), the data, the date logic and the MCP server end to end. CI runs them on Node 22 and 24, runs the built server on Node 18 and 20, and audits the dependencies.
+63 tests cover the validators (including every single-character mistake in the sample GSTINs and Aadhaar numbers), the data, the date logic and the MCP server end to end. CI runs them on Node 22 and 24, runs the built server on Node 18 and 20, and audits the dependencies.
 
 ![Test run](docs/img/tests.svg)
 
@@ -146,7 +152,7 @@ Every tool result carries its own `note` or `data_as_of`, so a model reading the
 
 ```bash
 npm install && npm run build
-npm test                          # 58 tests
+npm test                          # 63 tests
 npm run demo                      # the terminal tour above
 npm run bench                     # speed and size
 python3 bench/crosscheck.py       # independent Python checksum vs this package, 20,000 strings
