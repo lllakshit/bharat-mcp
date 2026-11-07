@@ -28,6 +28,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          gh label create data-freshness --description "Bundled data needs a refresh" --color FBCA04 2>/dev/null || true
           existing=$(gh issue list --label data-freshness --state open --json number --jq '.[0].number')
           if [ -n "$existing" ]; then
             gh issue comment "$existing" --body-file report.txt

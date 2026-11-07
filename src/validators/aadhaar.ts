@@ -13,7 +13,8 @@ export type AadhaarResult = {
  */
 export function validateAadhaarFormat(input: string): AadhaarResult {
   const digits = input.replace(/[\s-]+/g, "")
-  const masked = digits.length >= 4 ? `XXXX XXXX ${digits.slice(-4)}` : "XXXX XXXX XXXX"
+  // The last four digits are shown only for a full 12-digit number; anything else is masked completely.
+  const masked = digits.length === 12 && /^\d+$/.test(digits) ? `XXXX XXXX ${digits.slice(-4)}` : "XXXX XXXX XXXX"
   const errors: string[] = []
   if (!/^\d+$/.test(digits)) {
     errors.push("An Aadhaar number has digits only (spaces and hyphens are ignored).")

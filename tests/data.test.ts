@@ -23,7 +23,20 @@ describe("states", () => {
     expect(findState("TG")?.name).toBe("Telangana")
     expect(findState("Jammu & Kashmir")?.gst_code).toBe("01")
     expect(findState("Atlantis")).toBeUndefined()
+    expect(findState("Chhattisgarh")?.iso).toBe("IN-CG")
     expect(findState("")).toBeUndefined()
+  })
+
+  it("accepts common alternative names and older codes, and never guesses from a vague word", () => {
+    expect(findState("New Delhi")?.name).toBe("Delhi")
+    expect(findState("Orissa")?.name).toBe("Odisha")
+    expect(findState("Pondicherry")?.name).toBe("Puducherry")
+    expect(findState("Uttaranchal")?.name).toBe("Uttarakhand")
+    expect(findState("IN-TG")?.name).toBe("Telangana")
+    expect(findState("IN-CT")?.name).toBe("Chhattisgarh")
+    expect(findState("pradesh")).toBeUndefined()
+    expect(findState("land")).toBeUndefined()
+    expect(findState("Karnat")?.name).toBe("Karnataka")
   })
 
   it("knows the GST codes that are not states", () => {
@@ -169,6 +182,13 @@ describe("computeDeadlines", () => {
     expect(() => computeDeadlines({ from: "2026-02-30", to: "2026-03-01" })).toThrow(/real calendar dates/)
     expect(() => computeDeadlines({ from: "2026-03-02", to: "2026-03-01" })).toThrow(/before/)
     expect(() => computeDeadlines({ from: "2026-01-01", to: "2028-01-01" })).toThrow(/13 months/)
+  })
+
+  it("warns when the range goes beyond the bundled holiday years", () => {
+    const covered = computeDeadlines({ from: "2027-01-01", to: "2027-03-01" })
+    expect(covered.warnings.join(" ")).not.toContain("Holiday data is bundled")
+    const beyond = computeDeadlines({ from: "2028-01-01", to: "2028-02-01" })
+    expect(beyond.warnings.join(" ")).toContain("2028")
   })
 
   it("always states how far the data can be trusted", () => {

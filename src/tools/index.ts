@@ -27,7 +27,7 @@ export const tools = [
     name: "validate_gstin",
     title: "Validate a GSTIN",
     description:
-      "Checks an Indian GSTIN offline: 15-character structure, state code, embedded PAN, and the mod-36 check character. Returns the decoded parts. Use this instead of guessing whether a GSTIN is real; a model cannot calculate the check character reliably. A pass only means well-formed, not registered.",
+      "Checks an Indian GSTIN offline: 15-character structure, state code, embedded PAN, and the mod-36 check character. Returns the decoded parts. Use this instead of guessing whether a GSTIN is well-formed; a model cannot calculate the check character reliably. Covers regular-taxpayer GSTINs (14th character Z); TDS/TCS, UN-body and non-resident formats are not supported. A pass only means well-formed, not registered or active.",
     inputSchema: { gstin: z.string().min(1).max(40).describe("The GSTIN, with or without spaces or hyphens") },
     run: ({ gstin }) => ({ ...validateGstin(gstin), note: GSTIN_NOTE }),
   }),
@@ -84,7 +84,7 @@ export const tools = [
     name: "india_holidays",
     title: "Indian central government holidays",
     description:
-      "Lists the Central Government closed (gazetted) holidays for a year, or checks whether a given date is one. Covers 2026 and 2027, from the DoPT order. It does NOT include state holidays, bank holidays or stock-exchange holidays, and moon-dependent festival dates can shift by a day.",
+      "Lists the Central Government closed (gazetted) holidays for a year, or checks whether a given date is one (if both are given, `date` is used). Covers 2026 and 2027, from the DoPT order. It does NOT include state holidays, bank holidays or stock-exchange holidays, and moon-dependent festival dates can shift by a day.",
     inputSchema: {
       year: z.number().int().min(2000).max(2100).optional().describe("The year, for example 2026"),
       date: z.string().optional().describe("A date YYYY-MM-DD to check instead of listing a year"),

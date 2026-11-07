@@ -1,7 +1,7 @@
 import { addDays, daysInMonth, isIsoDate, toIso, weekdayOf } from "./dates.js"
 import { loadData } from "./data/loader.js"
 import { findState } from "./data/states.js"
-import { holidaysOn } from "./holidays.js"
+import { availableHolidayYears, holidaysOn } from "./holidays.js"
 
 export type Category = "gst" | "tds" | "income_tax" | "roc" | "labour"
 
@@ -19,7 +19,7 @@ type DeadlineRule = {
   authority: string
   authority_url: string
   legal_basis: string
-  confidence: "high" | "medium"
+  confidence: "medium"
   notes?: string
 }
 
@@ -32,7 +32,7 @@ type EventRule = {
   legal_basis: string
   authority: string
   authority_url: string
-  confidence: "high" | "medium"
+  confidence: "medium"
 }
 
 type ComplianceFile = {
@@ -56,7 +56,7 @@ export type Deadline = {
   authority: string
   authority_url: string
   legal_basis: string
-  confidence: "high" | "medium"
+  confidence: "medium"
   central_government_holiday?: string
   notes?: string
 }
@@ -134,6 +134,11 @@ export function computeDeadlines(query: DeadlineQuery): DeadlineResult {
   }
   found.sort((a, b) => a.date.localeCompare(b.date) || a.name.localeCompare(b.name))
 
+  const uncovered: number[] = []
+  for (let y = fy; y <= ty; y++) if (!availableHolidayYears().includes(String(y))) uncovered.push(y)
+  if (uncovered.length > 0) {
+    warnings.push(`Holiday data is bundled for ${availableHolidayYears().join(" and ")} only, so dates in ${uncovered.join(", ")} are not checked against central government holidays.`)
+  }
   if (found.some((d) => d.weekday === "Sunday" || d.central_government_holiday)) {
     warnings.push("Some dates fall on a Sunday or a central government holiday. They are NOT shifted here; whether the next working day applies depends on the specific law.")
   }

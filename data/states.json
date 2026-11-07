@@ -4,12 +4,13 @@
   "as_of": "2026-11-07",
   "sources": [
    "GST state codes: CBIC / GSTN (Annexure to GSTIN structure)",
-   "ISO 3166-2:IN subdivision codes",
+   "ISO 3166-2:IN subdivision codes (checked against the ISO listing as updated on 23 Nov 2023)",
    "State vehicle registration (RTO) series prefixes as notified by MoRTH"
   ],
   "notes": [
    "Telangana registers new vehicles under TG since 2024 (TS earlier). Odisha uses OD (OR earlier). Uttarakhand uses UK (UA earlier).",
-   "Legacy GST codes: 25 (Daman and Diu, merged into 26) and 28 (Andhra Pradesh before the 2014 split) can still appear on old GSTINs."
+   "Legacy GST codes: 25 (Daman and Diu, merged into 26) and 28 (Andhra Pradesh before the 2014 split) can still appear on old GSTINs.",
+   "Older ISO codes still seen in the wild (IN-CT, IN-OR, IN-TG, IN-UT) are accepted when looking a state up."
   ]
  },
  "states": [
@@ -59,7 +60,7 @@
   },
   {
    "name": "Chhattisgarh",
-   "iso": "IN-CT",
+   "iso": "IN-CG",
    "type": "state",
    "gst_code": "22",
    "rto_prefixes": [

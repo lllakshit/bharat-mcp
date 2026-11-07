@@ -44,7 +44,7 @@ export type IfscResult = {
   branch_code?: string
 }
 
-export const normaliseIfsc = (input: string) => input.replace(/\s+/g, "").toUpperCase()
+export const normaliseIfsc = (input: string) => input.replace(/\s+/g, "").replace(/[a-z]/g, (c) => c.toUpperCase())
 
 /** Format check and bank-code decoding. It does not confirm the branch exists: that needs the live RBI list. */
 export function validateIfsc(input: string): IfscResult {

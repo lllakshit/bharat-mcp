@@ -35,9 +35,9 @@ describe("the MCP server", () => {
   })
 
   it("validates a real GSTIN and rejects a fake one that looks right", async () => {
-    expect((await call("validate_gstin", { gstin: "29AAGCB7383J1Z4" })).data).toMatchObject({ valid: true, state: "Karnataka" })
+    expect((await call("validate_gstin", { gstin: "29AAGCB7383J1Z4" })).data).toMatchObject({ valid_format: true, state: "Karnataka" })
     const fake = (await call("validate_gstin", { gstin: "29AAGCB7383J1Z5" })).data
-    expect(fake.valid).toBe(false)
+    expect(fake.valid_format).toBe(false)
     expect(String((fake.errors as string[])[0])).toContain("should be 4")
     expect(String(fake.note)).toContain("does NOT prove")
   })
@@ -63,7 +63,13 @@ describe("the MCP server", () => {
     expect(empty.isError).toBe(true)
     const wrongType = await client.callTool({ name: "lookup_pincode", arguments: { pincode: 110001 } })
     expect(wrongType.isError).toBe(true)
-    expect((await call("compliance_deadlines", { from: "2026-02-30" })).data).toHaveProperty("error")
-    expect((await call("india_holidays", { date: "tomorrow" })).data).toHaveProperty("error")
+    const badDate = await call("compliance_deadlines", { from: "2026-02-30" })
+    expect(badDate.isError).toBe(true)
+    expect(badDate.data).toHaveProperty("error")
+    const badHoliday = await call("india_holidays", { date: "tomorrow" })
+    expect(badHoliday.isError).toBe(true)
+    // A normal answer is never marked as an error.
+    expect((await call("validate_gstin", { gstin: "29AAGCB7383J1Z5" })).isError).toBeFalsy()
+    expect((await call("lookup_pincode", { pincode: "999999" })).isError).toBeFalsy()
   })
 })

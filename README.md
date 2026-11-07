@@ -20,13 +20,16 @@ With the tool, it gets this back (real output):
 
 ```json
 {
-  "valid": false,
+  "valid_format": false,
   "gstin": "29AAGCB7383J1Z5",
   "errors": ["The check character is wrong: it should be 4, not 5."],
   "state_code": "29",
   "state": "Karnataka",
   "pan": "AAGCB7383J",
   "holder_type": "Company",
+  "registration_number_in_state": 1,
+  "expected_check_character": "4",
+  "provided_check_character": "5",
   "note": "Well-formed means the structure and checksum are right. It does NOT prove the GSTIN is registered or active: check the GST portal for that."
 }
 ```
@@ -37,7 +40,7 @@ The only difference from a real GSTIN is the last character. Try the same questi
 
 | Tool | What it does | Works offline |
 |---|---|---|
-| `validate_gstin` | 15-character structure, state code, embedded PAN and the mod-36 check character, with decoded parts | yes |
+| `validate_gstin` | 15-character structure, state code, embedded PAN and the mod-36 check character, with decoded parts. Regular-taxpayer GSTINs only (14th character Z) | yes |
 | `validate_pan` | Shape plus holder type (individual, company, firm, HUF, trust and so on) | yes |
 | `validate_aadhaar_format` | Format and Verhoeff checksum **only**. Nothing is stored or looked up; only the last 4 digits are returned | yes |
 | `validate_ifsc` | IFSC format and bank code, with the bank name for well-known banks | yes |
@@ -89,16 +92,17 @@ Short version; the full detail is in [DATA-SOURCES.md](DATA-SOURCES.md).
 
 | Data | Source | As of | Limit |
 |---|---|---|---|
-| Pincodes | India Post All India Pincode Directory on data.gov.in, under the Government Open Data License - India | 30 May 2019 | Old. Pincodes created since are missing. District names are as in 2019. |
+| Pincodes | India Post All India Pincode Directory (data.gov.in), listed as Government Open Data License - India on the mirror it was taken from | 30 May 2019 | Old. Pincodes created since are missing. District names are as in 2019. |
 | States, GST codes, RTO prefixes | CBIC/GSTN GST state codes, ISO 3166-2:IN, MoRTH series | 7 Nov 2026 | Hand-curated |
-| Holidays | DoPT orders for 2026 (dated 3 Jul 2025) and 2027 (dated 16 Jul 2026) | 7 Nov 2026 | Central Government (Delhi) closed holidays only. No state, bank or stock-exchange holidays. Moon-dependent dates can shift. |
-| Compliance deadlines | Statutory due dates under the CGST Rules, Income-tax rules, EPF/ESI and Companies Act | 7 Nov 2026 | **Starter set.** Standard dates only; government extensions are not included. Checked against secondary calendars, not yet line by line against each notification. |
+| Holidays | DoPT orders for 2026 (dated 3 Jul 2025) and 2027 (dated 16 Jul 2026; checked against the official memorandum) | 7 Nov 2026 | Central Government (Delhi) closed holidays only. No state, bank or stock-exchange holidays. Moon-dependent dates can shift. |
+| Compliance deadlines | Statutory due dates under the CGST Rules, Income-tax rules, EPF/ESI and Companies Act | 7 Nov 2026 | **Starter set.** Standard dates only; government extensions are not included. Checked against secondary calendars, not yet line by line against each notification, so every entry is marked `medium` confidence. |
 
 Things this server deliberately does **not** do:
 
-- It does not tell you a GSTIN, PAN or Aadhaar number is **real or registered**. A pass means well-formed. Only the GST portal, the Income Tax Department or UIDAI can say more.
+- It does not tell you a GSTIN, PAN or Aadhaar number is **real or registered**. A pass (`valid_format: true`) means well-formed. Only the GST portal, the Income Tax Department or UIDAI can say more.
 - It does not look up Aadhaar numbers, store them, or log them.
 - It does not scrape government portals or captcha-protected pages.
+- It does not recognise TDS/TCS, UN-body or non-resident GSTIN formats; they are reported as not supported, not as fake.
 - It does not include IFSC branch data yet. The RBI data has no clear reuse licence, so only the format and bank code are checked.
 - It does not shift a due date that falls on a Sunday or holiday. It flags it.
 
@@ -108,7 +112,7 @@ Every tool result carries its own `note` or `data_as_of`, so a model reading the
 
 ```bash
 npm install
-npm test            # 52 tests: validators, data, and the MCP server
+npm test            # 57 tests: validators, data, and the MCP server
 npm run typecheck
 npm run build
 node scripts/smoke.mjs   # starts the built server over stdio and calls it

@@ -8,9 +8,11 @@
   "not_included": [
    "Income-tax return (ITR) due dates, because the rules for tax year 2026-27 changed with the Income-tax Act, 2025 and sources disagree",
    "State-specific taxes such as professional tax",
-   "Any extension notified after the as_of date"
+   "Any extension notified after the as_of date",
+   "Form and challan names are those used up to 31 March 2026; the Income-tax Rules, 2026 may have renumbered some of them"
   ],
-  "qrmp_note": "QRMP GSTR-3B is due on the 22nd for states in the first group and the 24th for the rest; the group comes from the state of registration."
+  "qrmp_note": "QRMP GSTR-3B is due on the 22nd for states in the first group and the 24th for the rest; the group comes from the state of registration.",
+  "confidence_note": "Every entry is marked medium: none has yet been checked line by line against its official notification."
  },
  "deadlines": [
   {
@@ -38,7 +40,7 @@
    "authority": "GST Council / CBIC / GSTN",
    "authority_url": "https://www.gst.gov.in/",
    "legal_basis": "CGST Rules, 2017, rule 59",
-   "confidence": "high"
+   "confidence": "medium"
   },
   {
    "id": "gstr1-qrmp",
@@ -57,7 +59,7 @@
    "authority": "GST Council / CBIC / GSTN",
    "authority_url": "https://www.gst.gov.in/",
    "legal_basis": "CGST Rules, 2017, rule 59(1)",
-   "confidence": "high"
+   "confidence": "medium"
   },
   {
    "id": "iff-qrmp",
@@ -107,7 +109,7 @@
    "authority": "GST Council / CBIC / GSTN",
    "authority_url": "https://www.gst.gov.in/",
    "legal_basis": "CGST Rules, 2017, rule 61",
-   "confidence": "high"
+   "confidence": "medium"
   },
   {
    "id": "gstr3b-qrmp",
@@ -126,7 +128,7 @@
    "authority": "GST Council / CBIC / GSTN",
    "authority_url": "https://www.gst.gov.in/",
    "legal_basis": "CGST Rules, 2017, rule 61, and the CBIC notifications that group states into 22nd and 24th",
-   "confidence": "high",
+   "confidence": "medium",
    "variants": "gst_qrmp_state_group"
   },
   {
@@ -251,7 +253,7 @@
     12
    ],
    "day": 31,
-   "period": "The financial year that ended on 31 March of the previous calendar year",
+   "period": "The financial year that ended on the previous 31 March (the 31 December 2026 return is for 2025-26)",
    "authority": "GST Council / CBIC / GSTN",
    "authority_url": "https://www.gst.gov.in/",
    "legal_basis": "CGST Rules, 2017, rule 80. This date is often extended by notification.",
@@ -283,7 +285,7 @@
    "authority": "Income Tax Department",
    "authority_url": "https://www.incometax.gov.in/",
    "legal_basis": "Income-tax Rules (deposit of tax deducted at source); Income-tax Act, 2025 for tax years from 1 April 2026",
-   "confidence": "high",
+   "confidence": "medium",
    "day_overrides": {
     "4": 30
    },
@@ -341,7 +343,8 @@
    "authority": "Income Tax Department",
    "authority_url": "https://www.incometax.gov.in/",
    "legal_basis": "Income-tax Act, 1961 section 211 (until 31 March 2026); Income-tax Act, 2025 for tax years from 1 April 2026",
-   "confidence": "medium"
+   "confidence": "medium",
+   "notes": "Taxpayers on the presumptive scheme (sections 44AD and 44ADA) pay the whole advance tax in one instalment by 15 March."
   },
   {
    "id": "pf",
@@ -368,7 +371,7 @@
    "authority": "EPFO / ESIC",
    "authority_url": "https://www.epfindia.gov.in/",
    "legal_basis": "EPF Scheme, 1952, paragraph 38",
-   "confidence": "high",
+   "confidence": "medium",
    "notes": "A grace period of 5 days exists for interest and damages in some cases, but the due date is the 15th."
   },
   {
@@ -396,7 +399,7 @@
    "authority": "ESIC",
    "authority_url": "https://www.esic.gov.in/",
    "legal_basis": "ESI (General) Regulations, 1950, regulation 31",
-   "confidence": "high"
+   "confidence": "medium"
   },
   {
    "id": "dir3-kyc",
@@ -461,7 +464,7 @@
    "legal_basis": "Companies Act, 2013, section 96",
    "authority": "Ministry of Corporate Affairs",
    "authority_url": "https://www.mca.gov.in/",
-   "confidence": "high"
+   "confidence": "medium"
   },
   {
    "id": "aoc4",
@@ -472,7 +475,7 @@
    "legal_basis": "Companies Act, 2013, section 137",
    "authority": "Ministry of Corporate Affairs",
    "authority_url": "https://www.mca.gov.in/",
-   "confidence": "high"
+   "confidence": "medium"
   },
   {
    "id": "mgt7",
@@ -483,7 +486,7 @@
    "legal_basis": "Companies Act, 2013, section 92",
    "authority": "Ministry of Corporate Affairs",
    "authority_url": "https://www.mca.gov.in/",
-   "confidence": "high"
+   "confidence": "medium"
   },
   {
    "id": "adt1",

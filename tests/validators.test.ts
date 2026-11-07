@@ -21,7 +21,7 @@ describe("validateGstin", () => {
   it.each(valid)("accepts %s", (gstin) => {
     const result = validateGstin(gstin)
     expect(result.errors).toEqual([])
-    expect(result.valid).toBe(true)
+    expect(result.valid_format).toBe(true)
   })
 
   it("decodes the parts", () => {
@@ -30,8 +30,8 @@ describe("validateGstin", () => {
   })
 
   it("ignores spaces and hyphens", () => {
-    expect(validateGstin("27 AAPFU 0939 F1ZV").valid).toBe(true)
-    expect(validateGstin("27-AAPFU0939F1ZV").valid).toBe(true)
+    expect(validateGstin("27 AAPFU 0939 F1ZV").valid_format).toBe(true)
+    expect(validateGstin("27-AAPFU0939F1ZV").valid_format).toBe(true)
   })
 
   it("rejects a GSTIN with one wrong character (the case models wave through)", () => {
@@ -42,39 +42,54 @@ describe("validateGstin", () => {
         const alphabet = /[0-9]/.test(original) ? "0123456789" : "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         const swap = alphabet[(alphabet.indexOf(original) + 1) % alphabet.length]!
         const broken = gstin.slice(0, i) + swap + gstin.slice(i + 1)
-        expect(validateGstin(broken).valid, `${broken} should be invalid`).toBe(false)
+        expect(validateGstin(broken).valid_format, `${broken} should be invalid`).toBe(false)
       }
     }
   })
 
   it("explains a wrong check character", () => {
     const result = validateGstin("27AAPFU0939F1Z1")
-    expect(result.valid).toBe(false)
+    expect(result.valid_format).toBe(false)
     expect(result.errors.join(" ")).toContain("should be V")
   })
 
   it("rejects wrong length, shape and state code", () => {
-    expect(validateGstin("27AAPFU0939F1Z").valid).toBe(false)
-    expect(validateGstin("27AAPFU0939F1ZVV").valid).toBe(false)
-    expect(validateGstin("ABAAPFU0939F1ZV").valid).toBe(false)
-    expect(validateGstin("27AAPFU0939F1AV").valid).toBe(false)
+    expect(validateGstin("27AAPFU0939F1Z").valid_format).toBe(false)
+    expect(validateGstin("27AAPFU0939F1ZVV").valid_format).toBe(false)
+    expect(validateGstin("ABAAPFU0939F1ZV").valid_format).toBe(false)
+    expect(validateGstin("27AAPFU0939F1AV").valid_format).toBe(false)
     const unknownState = "39AAPFU0939F1Z" + gstinCheckCharacter("39AAPFU0939F1Z")
     const result = validateGstin(unknownState)
-    expect(result.valid).toBe(false)
+    expect(result.valid_format).toBe(false)
     expect(result.errors.join(" ")).toContain("not a GST state code")
+  })
+
+  it("says so when the 14th character is not Z instead of calling the number fake", () => {
+    const result = validateGstin("27AAPFU0939F1DV")
+    expect(result.valid_format).toBe(false)
+    expect(result.errors.join(" ")).toContain("not supported")
+    expect(result.errors.join(" ")).toContain("does not prove")
+  })
+
+  it("does not fold look-alike Unicode letters into valid ones", () => {
+    expect(validateGstin("27AAPFU0939F1ZV").valid_format).toBe(true)
+    // U+017F (long s) upper-cases to S in JavaScript; it must stay a different, invalid character.
+    expect(validateGstin("27AAPFU0939F1ZV".replace("U", "\u017f")).valid_format).toBe(false)
+    expect(validatePan("ABCPE1234\u017f").valid_format).toBe(false)
+    expect(validateIfsc("\u017fBIN0001234").valid_format).toBe(false)
   })
 
   it("accepts the special GST codes 97 and 99", () => {
     for (const code of ["97", "99"]) {
       const first14 = `${code}AAPFU0939F1Z`
-      expect(validateGstin(first14 + gstinCheckCharacter(first14)).valid).toBe(true)
+      expect(validateGstin(first14 + gstinCheckCharacter(first14)).valid_format).toBe(true)
     }
   })
 
   it("rejects a PAN with an unknown holder type inside a GSTIN", () => {
     const first14 = "27AAPKU0939F1Z"
     const result = validateGstin(first14 + gstinCheckCharacter(first14))
-    expect(result.valid).toBe(false)
+    expect(result.valid_format).toBe(false)
     expect(result.errors.join(" ")).toContain("PAN inside the GSTIN")
   })
 })
@@ -88,22 +103,22 @@ describe("validatePan", () => {
     ["AAATA1234B", "T", "Trust (AOP)"],
     ["AAAGA1234B", "G", "Government"],
   ])("accepts %s", (pan, code, type) => {
-    expect(validatePan(pan)).toMatchObject({ valid: true, holder_type_code: code, holder_type: type })
+    expect(validatePan(pan)).toMatchObject({ valid_format: true, holder_type_code: code, holder_type: type })
   })
 
   it("normalises case and spaces", () => {
-    expect(validatePan(" abcpe 1234f ")).toMatchObject({ valid: true, pan: "ABCPE1234F" })
+    expect(validatePan(" abcpe 1234f ")).toMatchObject({ valid_format: true, pan: "ABCPE1234F" })
   })
 
   it("rejects bad shapes", () => {
     for (const pan of ["", "ABCPE1234", "ABCPE12345", "ABCPE1234FF", "1BCPE1234F", "ABCPEA234F", "ABCPE1234 1"]) {
-      expect(validatePan(pan).valid, pan).toBe(false)
+      expect(validatePan(pan).valid_format, pan).toBe(false)
     }
   })
 
   it("rejects an unknown holder type", () => {
     const result = validatePan("ABCKE1234F")
-    expect(result.valid).toBe(false)
+    expect(result.valid_format).toBe(false)
     expect(result.errors.join(" ")).toContain("not a recognised holder type")
   })
 })
@@ -124,6 +139,12 @@ describe("validateAadhaarFormat", () => {
     expect(result.masked).toBe(`XXXX XXXX ${number.slice(-4)}`)
     expect(JSON.stringify(result)).not.toContain(number)
     expect(JSON.stringify(validateAadhaarFormat("12345"))).not.toContain("12345")
+  })
+
+  it("masks everything unless the input is a full 12-digit number", () => {
+    expect(validateAadhaarFormat("123456789").masked).toBe("XXXX XXXX XXXX")
+    expect(validateAadhaarFormat("2345678901234").masked).toBe("XXXX XXXX XXXX")
+    expect(validateAadhaarFormat("ABCD").masked).toBe("XXXX XXXX XXXX")
   })
 
   it("catches every single-digit mistake and every swap of neighbouring digits", () => {

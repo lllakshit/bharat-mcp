@@ -12,7 +12,7 @@ export const PAN_HOLDER_TYPES: Record<string, string> = {
 }
 
 export type PanResult = {
-  valid: boolean
+  valid_format: boolean
   pan: string
   errors: string[]
   holder_type_code?: string
@@ -20,7 +20,10 @@ export type PanResult = {
   fifth_character_meaning?: string
 }
 
-export const normalisePan = (input: string) => input.replace(/\s+/g, "").toUpperCase()
+/** Upper-cases ASCII letters only, so look-alike Unicode characters are never folded into valid ones. */
+export const upperAscii = (value: string) => value.replace(/[a-z]/g, (c) => c.toUpperCase())
+
+export const normalisePan = (input: string) => upperAscii(input.replace(/\s+/g, ""))
 
 /** Format and holder-type check only. It cannot tell whether a PAN was ever issued or who owns it. */
 export function validatePan(input: string): PanResult {
@@ -29,16 +32,16 @@ export function validatePan(input: string): PanResult {
   if (pan.length !== 10) errors.push(`A PAN has 10 characters; this has ${pan.length}.`)
   if (!/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(pan)) {
     errors.push("A PAN is 5 letters, 4 digits, then 1 letter (for example ABCPE1234F).")
-    return { valid: false, pan, errors }
+    return { valid_format: false, pan, errors }
   }
   const code = pan[3]!
   const holder = PAN_HOLDER_TYPES[code]
   if (!holder) {
     errors.push(`The 4th character "${code}" is not a recognised holder type (${Object.keys(PAN_HOLDER_TYPES).join(", ")}).`)
-    return { valid: false, pan, errors, holder_type_code: code }
+    return { valid_format: false, pan, errors, holder_type_code: code }
   }
   return {
-    valid: true,
+    valid_format: true,
     pan,
     errors: [],
     holder_type_code: code,
