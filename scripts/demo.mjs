@@ -16,7 +16,12 @@ await client.connect(new StdioClientTransport({ command: process.execPath, args:
 const verdict = (ok) => (ok ? green("✔ well-formed") : red("✘ NOT well-formed"))
 const row = (label, value) => console.log(`    ${dim(label.padEnd(18))} ${value}`)
 
+// Set DEMO_PACE_MS to pause before each call, so the tour is easy to follow on screen or in a recording.
+const pace = Number(process.env.DEMO_PACE_MS ?? 0)
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
 async function call(name, args, show) {
+  if (pace) await sleep(pace)
   console.log(`\n${cyan("▶")} ${bold(name)} ${dim(JSON.stringify(args))}`)
   const t0 = performance.now()
   const result = await client.callTool({ name, arguments: args })

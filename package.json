@@ -51,7 +51,8 @@
     "bench": "node bench/perf.mjs",
     "bench:llm": "node bench/llm/run.mjs",
     "smoke": "node scripts/smoke.mjs",
-    "proof": "node scripts/make-proof.mjs"
+    "proof": "node scripts/make-proof.mjs",
+    "video": "node scripts/record-demo.mjs 1400 && swiftc -O scripts/video/render-demo-video.swift -o /tmp/bharat-render-video && /tmp/bharat-render-video docs/proof/demo-timing.json bharat-mcp-demo.mp4"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",

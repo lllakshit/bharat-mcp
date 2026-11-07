@@ -1,0 +1,342 @@
+{
+ "pace_ms": 1400,
+ "total_ms": 17351,
+ "lines": [
+  {
+   "t": 415,
+   "line": "\u001b[1mbharat-mcp\u001b[0m\u001b[2m · MCP server for Indian public data · connected over stdio\u001b[0m"
+  },
+  {
+   "t": 415,
+   "line": "\u001b[2mtools: validate_gstin, validate_pan, validate_aadhaar_format, validate_ifsc\u001b[0m"
+  },
+  {
+   "t": 415,
+   "line": "\u001b[2m       lookup_pincode, state_info, india_holidays, compliance_deadlines\u001b[0m"
+  },
+  {
+   "t": 415,
+   "line": "\u001b[1m"
+  },
+  {
+   "t": 415,
+   "line": "── 1. A real GSTIN and a fake one that differs by ONE character ──\u001b[0m"
+  },
+  {
+   "t": 1817,
+   "line": ""
+  },
+  {
+   "t": 1817,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mvalidate_gstin\u001b[0m \u001b[2m{\"gstin\":\"29AAGCB7383J1Z4\"}\u001b[0m"
+  },
+  {
+   "t": 1833,
+   "line": "    \u001b[2mresult            \u001b[0m \u001b[32m✔ well-formed\u001b[0m"
+  },
+  {
+   "t": 1833,
+   "line": "    \u001b[2mdecoded           \u001b[0m Karnataka · PAN AAGCB7383J · Company"
+  },
+  {
+   "t": 1833,
+   "line": "\u001b[2m    (10.7 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 3235,
+   "line": ""
+  },
+  {
+   "t": 3235,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mvalidate_gstin\u001b[0m \u001b[2m{\"gstin\":\"29AAGCB7383J1Z5\"}\u001b[0m"
+  },
+  {
+   "t": 3237,
+   "line": "    \u001b[2mresult            \u001b[0m \u001b[31m✘ NOT well-formed\u001b[0m"
+  },
+  {
+   "t": 3238,
+   "line": "    \u001b[2mwhy               \u001b[0m \u001b[33mThe check character is wrong: it should be 4, not 5.\u001b[0m"
+  },
+  {
+   "t": 3238,
+   "line": "    \u001b[2mdecoded           \u001b[0m Karnataka · PAN AAGCB7383J · Company"
+  },
+  {
+   "t": 3238,
+   "line": "\u001b[2m    (2.8 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 3238,
+   "line": "\u001b[1m"
+  },
+  {
+   "t": 3238,
+   "line": "── 2. PAN, Aadhaar (format only), IFSC ──\u001b[0m"
+  },
+  {
+   "t": 4639,
+   "line": ""
+  },
+  {
+   "t": 4639,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mvalidate_pan\u001b[0m \u001b[2m{\"pan\":\"ABCPE1234F\"}\u001b[0m"
+  },
+  {
+   "t": 4641,
+   "line": "    \u001b[2mresult            \u001b[0m \u001b[32m✔ well-formed\u001b[0m"
+  },
+  {
+   "t": 4641,
+   "line": "    \u001b[2mholder type       \u001b[0m Individual (person)"
+  },
+  {
+   "t": 4641,
+   "line": "\u001b[2m    (1.8 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 6041,
+   "line": ""
+  },
+  {
+   "t": 6041,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mvalidate_pan\u001b[0m \u001b[2m{\"pan\":\"ABCKE1234F\"}\u001b[0m"
+  },
+  {
+   "t": 6044,
+   "line": "    \u001b[2mresult            \u001b[0m \u001b[31m✘ NOT well-formed\u001b[0m"
+  },
+  {
+   "t": 6044,
+   "line": "    \u001b[2mwhy               \u001b[0m \u001b[33mThe 4th character \"K\" is not a recognised holder type (A, B, C, F, G, H, J, L, P, T).\u001b[0m"
+  },
+  {
+   "t": 6044,
+   "line": "\u001b[2m    (2.3 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 7444,
+   "line": ""
+  },
+  {
+   "t": 7444,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mvalidate_aadhaar_format\u001b[0m \u001b[2m{\"aadhaar\":\"2345 6789 0124\"}\u001b[0m"
+  },
+  {
+   "t": 7446,
+   "line": "    \u001b[2mformat            \u001b[0m \u001b[32m✔ well-formed\u001b[0m"
+  },
+  {
+   "t": 7446,
+   "line": "    \u001b[2mshown back        \u001b[0m XXXX XXXX 0124"
+  },
+  {
+   "t": 7446,
+   "line": "\u001b[2m    (1.4 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 8847,
+   "line": ""
+  },
+  {
+   "t": 8847,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mvalidate_aadhaar_format\u001b[0m \u001b[2m{\"aadhaar\":\"2345 6789 0125\"}\u001b[0m"
+  },
+  {
+   "t": 8847,
+   "line": "    \u001b[2mformat            \u001b[0m \u001b[31m✘ NOT well-formed\u001b[0m"
+  },
+  {
+   "t": 8847,
+   "line": "    \u001b[2mwhy               \u001b[0m \u001b[33mThe Verhoeff check digit does not match.\u001b[0m"
+  },
+  {
+   "t": 8847,
+   "line": "    \u001b[2mshown back        \u001b[0m XXXX XXXX 0125"
+  },
+  {
+   "t": 8847,
+   "line": "\u001b[2m    (0.6 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 8847,
+   "line": "\u001b[2m    (made-up numbers; the tool checks only the format and never stores or looks anything up)\u001b[0m"
+  },
+  {
+   "t": 10249,
+   "line": ""
+  },
+  {
+   "t": 10249,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mvalidate_ifsc\u001b[0m \u001b[2m{\"ifsc\":\"SBIN0001234\"}\u001b[0m"
+  },
+  {
+   "t": 10251,
+   "line": "    \u001b[2mresult            \u001b[0m \u001b[32m✔ well-formed\u001b[0m"
+  },
+  {
+   "t": 10251,
+   "line": "    \u001b[2mbank              \u001b[0m State Bank of India"
+  },
+  {
+   "t": 10251,
+   "line": "\u001b[2m    (2.0 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 10251,
+   "line": "\u001b[1m"
+  },
+  {
+   "t": 10251,
+   "line": "── 3. Lookups ──\u001b[0m"
+  },
+  {
+   "t": 11652,
+   "line": ""
+  },
+  {
+   "t": 11652,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mlookup_pincode\u001b[0m \u001b[2m{\"pincode\":\"302001\"}\u001b[0m"
+  },
+  {
+   "t": 11687,
+   "line": "    \u001b[2mplace             \u001b[0m Jaipur, Rajasthan"
+  },
+  {
+   "t": 11687,
+   "line": "    \u001b[2mpost offices      \u001b[0m 7 (Jaipur G.P.O., Chandpole Bazar…)"
+  },
+  {
+   "t": 11687,
+   "line": "    \u001b[2mdata as of        \u001b[0m \u001b[33m2026-11-07\u001b[0m"
+  },
+  {
+   "t": 11687,
+   "line": "\u001b[2m    (35.0 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 13088,
+   "line": ""
+  },
+  {
+   "t": 13088,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mstate_info\u001b[0m \u001b[2m{\"query\":\"27\"}\u001b[0m"
+  },
+  {
+   "t": 13089,
+   "line": "    \u001b[2mstate             \u001b[0m Maharashtra (state)"
+  },
+  {
+   "t": 13089,
+   "line": "    \u001b[2mRTO prefix        \u001b[0m MH"
+  },
+  {
+   "t": 13089,
+   "line": "    \u001b[2mQRMP GSTR-3B day  \u001b[0m 22"
+  },
+  {
+   "t": 13089,
+   "line": "\u001b[2m    (1.0 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 14491,
+   "line": ""
+  },
+  {
+   "t": 14491,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mindia_holidays\u001b[0m \u001b[2m{\"date\":\"2026-11-08\"}\u001b[0m"
+  },
+  {
+   "t": 14497,
+   "line": "    \u001b[2mcentral holiday?  \u001b[0m \u001b[32mDiwali (Deepavali)\u001b[0m"
+  },
+  {
+   "t": 14497,
+   "line": "\u001b[2m    (6.4 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 14497,
+   "line": "\u001b[1m"
+  },
+  {
+   "t": 14497,
+   "line": "── 4. What is due next? (GST, Karnataka, November 2026) ──\u001b[0m"
+  },
+  {
+   "t": 15898,
+   "line": ""
+  },
+  {
+   "t": 15898,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mcompliance_deadlines\u001b[0m \u001b[2m{\"from\":\"2026-11-01\",\"to\":\"2026-11-30\",\"categories\":[\"gst\"],\"state\":\"Karnataka\"}\u001b[0m"
+  },
+  {
+   "t": 15924,
+   "line": "    \u001b[2m2026-11-10 Tue    \u001b[0m GSTR-7 / GSTR-8 \u001b[2m· CGST Rules\u001b[0m"
+  },
+  {
+   "t": 15924,
+   "line": "    \u001b[2m2026-11-11 Wed    \u001b[0m GSTR-1 \u001b[2m· CGST Rules\u001b[0m"
+  },
+  {
+   "t": 15924,
+   "line": "    \u001b[2m2026-11-13 Fri    \u001b[0m GSTR-6 \u001b[2m· CGST Rules\u001b[0m"
+  },
+  {
+   "t": 15924,
+   "line": "    \u001b[2m2026-11-13 Fri    \u001b[0m IFF \u001b[2m· CGST Rules\u001b[0m"
+  },
+  {
+   "t": 15924,
+   "line": "    \u001b[2m2026-11-20 Fri    \u001b[0m GSTR-3B \u001b[2m· CGST Rules\u001b[0m"
+  },
+  {
+   "t": 15924,
+   "line": "    \u001b[2m2026-11-25 Wed    \u001b[0m PMT-06 \u001b[2m· CGST Rules\u001b[0m"
+  },
+  {
+   "t": 15924,
+   "line": "    \u001b[2mstatus            \u001b[0m \u001b[33mstarter set\u001b[0m"
+  },
+  {
+   "t": 15924,
+   "line": "\u001b[2m    (24.9 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 15924,
+   "line": "\u001b[1m"
+  },
+  {
+   "t": 15924,
+   "line": "── 5. Bad input is an error, not a guess ──\u001b[0m"
+  },
+  {
+   "t": 17325,
+   "line": ""
+  },
+  {
+   "t": 17325,
+   "line": "\u001b[36m▶\u001b[0m \u001b[1mcompliance_deadlines\u001b[0m \u001b[2m{\"from\":\"2026-02-30\"}\u001b[0m"
+  },
+  {
+   "t": 17327,
+   "line": "    \u001b[2misError           \u001b[0m \u001b[32mtrue\u001b[0m"
+  },
+  {
+   "t": 17327,
+   "line": "    \u001b[2mmessage           \u001b[0m \u001b[33mDates must be real calendar dates in YYYY-MM-DD form.\u001b[0m"
+  },
+  {
+   "t": 17327,
+   "line": "\u001b[2m    (1.7 ms, answered offline over stdio)\u001b[0m"
+  },
+  {
+   "t": 17342,
+   "line": ""
+  },
+  {
+   "t": 17342,
+   "line": "\u001b[32m✔\u001b[0m \u001b[1mdone\u001b[0m \u001b[2m— every answer above was calculated or read locally; no network was used.\u001b[0m"
+  }
+ ]
+}

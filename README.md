@@ -63,6 +63,8 @@ npm run demo
 
 Bad input comes back as an MCP error (`isError: true`), not as a guess.
 
+There is also a 30-second video of this run. It is a replay of a real recording: the output and its timing are from an actual run (`docs/proof/demo-timing.json`); the typed command and the title cards are added. Build it yourself with `npm run video` (macOS).
+
 ## Install
 
 Requires Node 18 or newer.
@@ -151,6 +153,7 @@ python3 bench/crosscheck.py       # independent Python checksum vs this package,
 node bench/llm/tool-check.mjs     # the 40 GSTIN questions put to the tool over stdio
 node bench/llm/report.mjs         # the benchmark table, from the saved results
 npm run proof                     # regenerates every screenshot in docs/img from real runs
+npm run video                     # macOS only: records a real demo run and builds bharat-mcp-demo.mp4 from it
 ```
 
 The screenshots in `docs/img` are SVG renderings of real terminal output. The raw text of each run is in [`docs/proof/`](docs/proof/), so you can compare them line by line.
