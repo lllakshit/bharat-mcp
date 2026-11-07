@@ -1,0 +1,446 @@
+{
+ "_meta": {
+  "dataset": "states",
+  "as_of": "2026-11-07",
+  "sources": [
+   "GST state codes: CBIC / GSTN (Annexure to GSTIN structure)",
+   "ISO 3166-2:IN subdivision codes",
+   "State vehicle registration (RTO) series prefixes as notified by MoRTH"
+  ],
+  "notes": [
+   "Telangana registers new vehicles under TG since 2024 (TS earlier). Odisha uses OD (OR earlier). Uttarakhand uses UK (UA earlier).",
+   "Legacy GST codes: 25 (Daman and Diu, merged into 26) and 28 (Andhra Pradesh before the 2014 split) can still appear on old GSTINs."
+  ]
+ },
+ "states": [
+  {
+   "name": "Andhra Pradesh",
+   "iso": "IN-AP",
+   "type": "state",
+   "gst_code": "37",
+   "rto_prefixes": [
+    "AP"
+   ],
+   "capital": "Amaravati",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "iso": "IN-AR",
+   "type": "state",
+   "gst_code": "12",
+   "rto_prefixes": [
+    "AR"
+   ],
+   "capital": "Itanagar",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Assam",
+   "iso": "IN-AS",
+   "type": "state",
+   "gst_code": "18",
+   "rto_prefixes": [
+    "AS"
+   ],
+   "capital": "Dispur",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Bihar",
+   "iso": "IN-BR",
+   "type": "state",
+   "gst_code": "10",
+   "rto_prefixes": [
+    "BR"
+   ],
+   "capital": "Patna",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Chhattisgarh",
+   "iso": "IN-CT",
+   "type": "state",
+   "gst_code": "22",
+   "rto_prefixes": [
+    "CG"
+   ],
+   "capital": "Raipur",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Goa",
+   "iso": "IN-GA",
+   "type": "state",
+   "gst_code": "30",
+   "rto_prefixes": [
+    "GA"
+   ],
+   "capital": "Panaji",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Gujarat",
+   "iso": "IN-GJ",
+   "type": "state",
+   "gst_code": "24",
+   "rto_prefixes": [
+    "GJ"
+   ],
+   "capital": "Gandhinagar",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Haryana",
+   "iso": "IN-HR",
+   "type": "state",
+   "gst_code": "06",
+   "rto_prefixes": [
+    "HR"
+   ],
+   "capital": "Chandigarh",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Himachal Pradesh",
+   "iso": "IN-HP",
+   "type": "state",
+   "gst_code": "02",
+   "rto_prefixes": [
+    "HP"
+   ],
+   "capital": "Shimla",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Jharkhand",
+   "iso": "IN-JH",
+   "type": "state",
+   "gst_code": "20",
+   "rto_prefixes": [
+    "JH"
+   ],
+   "capital": "Ranchi",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Karnataka",
+   "iso": "IN-KA",
+   "type": "state",
+   "gst_code": "29",
+   "rto_prefixes": [
+    "KA"
+   ],
+   "capital": "Bengaluru",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Kerala",
+   "iso": "IN-KL",
+   "type": "state",
+   "gst_code": "32",
+   "rto_prefixes": [
+    "KL"
+   ],
+   "capital": "Thiruvananthapuram",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Madhya Pradesh",
+   "iso": "IN-MP",
+   "type": "state",
+   "gst_code": "23",
+   "rto_prefixes": [
+    "MP"
+   ],
+   "capital": "Bhopal",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Maharashtra",
+   "iso": "IN-MH",
+   "type": "state",
+   "gst_code": "27",
+   "rto_prefixes": [
+    "MH"
+   ],
+   "capital": "Mumbai",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Manipur",
+   "iso": "IN-MN",
+   "type": "state",
+   "gst_code": "14",
+   "rto_prefixes": [
+    "MN"
+   ],
+   "capital": "Imphal",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Meghalaya",
+   "iso": "IN-ML",
+   "type": "state",
+   "gst_code": "17",
+   "rto_prefixes": [
+    "ML"
+   ],
+   "capital": "Shillong",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Mizoram",
+   "iso": "IN-MZ",
+   "type": "state",
+   "gst_code": "15",
+   "rto_prefixes": [
+    "MZ"
+   ],
+   "capital": "Aizawl",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Nagaland",
+   "iso": "IN-NL",
+   "type": "state",
+   "gst_code": "13",
+   "rto_prefixes": [
+    "NL"
+   ],
+   "capital": "Kohima",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Odisha",
+   "iso": "IN-OD",
+   "type": "state",
+   "gst_code": "21",
+   "rto_prefixes": [
+    "OD",
+    "OR"
+   ],
+   "capital": "Bhubaneswar",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Punjab",
+   "iso": "IN-PB",
+   "type": "state",
+   "gst_code": "03",
+   "rto_prefixes": [
+    "PB"
+   ],
+   "capital": "Chandigarh",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Rajasthan",
+   "iso": "IN-RJ",
+   "type": "state",
+   "gst_code": "08",
+   "rto_prefixes": [
+    "RJ"
+   ],
+   "capital": "Jaipur",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Sikkim",
+   "iso": "IN-SK",
+   "type": "state",
+   "gst_code": "11",
+   "rto_prefixes": [
+    "SK"
+   ],
+   "capital": "Gangtok",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Tamil Nadu",
+   "iso": "IN-TN",
+   "type": "state",
+   "gst_code": "33",
+   "rto_prefixes": [
+    "TN"
+   ],
+   "capital": "Chennai",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Telangana",
+   "iso": "IN-TS",
+   "type": "state",
+   "gst_code": "36",
+   "rto_prefixes": [
+    "TS",
+    "TG"
+   ],
+   "capital": "Hyderabad",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Tripura",
+   "iso": "IN-TR",
+   "type": "state",
+   "gst_code": "16",
+   "rto_prefixes": [
+    "TR"
+   ],
+   "capital": "Agartala",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Uttar Pradesh",
+   "iso": "IN-UP",
+   "type": "state",
+   "gst_code": "09",
+   "rto_prefixes": [
+    "UP"
+   ],
+   "capital": "Lucknow",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Uttarakhand",
+   "iso": "IN-UK",
+   "type": "state",
+   "gst_code": "05",
+   "rto_prefixes": [
+    "UK",
+    "UA"
+   ],
+   "capital": "Dehradun",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "West Bengal",
+   "iso": "IN-WB",
+   "type": "state",
+   "gst_code": "19",
+   "rto_prefixes": [
+    "WB"
+   ],
+   "capital": "Kolkata",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "iso": "IN-AN",
+   "type": "union_territory",
+   "gst_code": "35",
+   "rto_prefixes": [
+    "AN"
+   ],
+   "capital": "Port Blair",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Chandigarh",
+   "iso": "IN-CH",
+   "type": "union_territory",
+   "gst_code": "04",
+   "rto_prefixes": [
+    "CH"
+   ],
+   "capital": "Chandigarh",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Dadra and Nagar Haveli and Daman and Diu",
+   "iso": "IN-DH",
+   "type": "union_territory",
+   "gst_code": "26",
+   "rto_prefixes": [
+    "DN",
+    "DD"
+   ],
+   "capital": "Daman",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Delhi",
+   "iso": "IN-DL",
+   "type": "union_territory",
+   "gst_code": "07",
+   "rto_prefixes": [
+    "DL"
+   ],
+   "capital": "New Delhi",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "iso": "IN-JK",
+   "type": "union_territory",
+   "gst_code": "01",
+   "rto_prefixes": [
+    "JK"
+   ],
+   "capital": "Srinagar (summer), Jammu (winter)",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Ladakh",
+   "iso": "IN-LA",
+   "type": "union_territory",
+   "gst_code": "38",
+   "rto_prefixes": [
+    "LA"
+   ],
+   "capital": "Leh",
+   "gst_qrmp_due_day": 24
+  },
+  {
+   "name": "Lakshadweep",
+   "iso": "IN-LD",
+   "type": "union_territory",
+   "gst_code": "31",
+   "rto_prefixes": [
+    "LD"
+   ],
+   "capital": "Kavaratti",
+   "gst_qrmp_due_day": 22
+  },
+  {
+   "name": "Puducherry",
+   "iso": "IN-PY",
+   "type": "union_territory",
+   "gst_code": "34",
+   "rto_prefixes": [
+    "PY"
+   ],
+   "capital": "Puducherry",
+   "gst_qrmp_due_day": 22
+  }
+ ],
+ "gst_special_codes": [
+  {
+   "code": "25",
+   "name": "Daman and Diu (legacy, merged into 26)"
+  },
+  {
+   "code": "28",
+   "name": "Andhra Pradesh (legacy, before the 2014 split; now 37)"
+  },
+  {
+   "code": "97",
+   "name": "Other Territory"
+  },
+  {
+   "code": "99",
+   "name": "Centre Jurisdiction"
+  }
+ ],
+ "postal_zones": {
+  "1": "Delhi, Haryana, Punjab, Himachal Pradesh, Jammu and Kashmir, Ladakh, Chandigarh",
+  "2": "Uttar Pradesh, Uttarakhand",
+  "3": "Rajasthan, Gujarat, Dadra and Nagar Haveli and Daman and Diu",
+  "4": "Maharashtra, Goa, Madhya Pradesh, Chhattisgarh",
+  "5": "Andhra Pradesh, Telangana, Karnataka",
+  "6": "Kerala, Tamil Nadu, Puducherry, Lakshadweep",
+  "7": "West Bengal, Odisha, Assam and the North-East, Andaman and Nicobar Islands",
+  "8": "Bihar, Jharkhand",
+  "9": "Army Postal Service (APS) and Field Post Offices"
+ }
+}

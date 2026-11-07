@@ -1,0 +1,36 @@
+name: Data freshness
+
+# Once a month: if any bundled data has gone stale, open (or update) a single tracking issue.
+on:
+  schedule:
+    - cron: "0 4 1 * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - id: check
+        run: |
+          set +e
+          node scripts/check-freshness.mjs > report.txt
+          echo "stale=$([ $? -eq 0 ] && echo no || echo yes)" >> "$GITHUB_OUTPUT"
+          cat report.txt
+      - if: steps.check.outputs.stale == 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing=$(gh issue list --label data-freshness --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file report.txt
+          else
+            gh issue create --title "Bundled data needs a refresh" --label data-freshness --body-file report.txt
+          fi

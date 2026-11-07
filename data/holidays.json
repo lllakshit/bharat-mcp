@@ -1,0 +1,166 @@
+{
+ "_meta": {
+  "dataset": "holidays",
+  "scope": "Central Government closed (gazetted) holidays for administrative offices in Delhi/New Delhi, as listed in the DoPT order for each year.",
+  "not_included": [
+   "State government holidays",
+   "Bank holidays and RBI list",
+   "Restricted (optional) holidays",
+   "Stock exchange (NSE/BSE) trading holidays"
+  ],
+  "retrieved": "2026-11-07",
+  "caveat": "Dates of festivals that follow the moon (Id, Muharram, Milad-un-Nabi) can shift by a day after the moon is sighted, and offices in other states may follow a list their state notifies. Check the notice for your own office or bank."
+ },
+ "years": {
+  "2026": {
+   "order": "DoPT O.M. No. F.No.12/2/2023-JCA dated 03.07.2025",
+   "source": "https://www.staffnews.in/2025/07/list-of-holidays-2026-closed-holidays.html",
+   "source_note": "Copy of the DoPT order published by staffnews.in; the original is on dopt.gov.in",
+   "holidays": [
+    [
+     "2026-01-26",
+     "Republic Day"
+    ],
+    [
+     "2026-03-04",
+     "Holi"
+    ],
+    [
+     "2026-03-21",
+     "Id-ul-Fitr"
+    ],
+    [
+     "2026-03-26",
+     "Ram Navami"
+    ],
+    [
+     "2026-03-31",
+     "Mahavir Jayanti"
+    ],
+    [
+     "2026-04-03",
+     "Good Friday"
+    ],
+    [
+     "2026-05-01",
+     "Budha Purnima"
+    ],
+    [
+     "2026-05-27",
+     "Id-ul-Zuha (Bakrid)"
+    ],
+    [
+     "2026-06-26",
+     "Muharram"
+    ],
+    [
+     "2026-08-15",
+     "Independence Day"
+    ],
+    [
+     "2026-08-26",
+     "Milad-un-Nabi (Id-e-Milad)"
+    ],
+    [
+     "2026-09-04",
+     "Janmashtami (Vaishnava)"
+    ],
+    [
+     "2026-10-02",
+     "Mahatma Gandhi's Birthday"
+    ],
+    [
+     "2026-10-20",
+     "Dussehra"
+    ],
+    [
+     "2026-11-08",
+     "Diwali (Deepavali)"
+    ],
+    [
+     "2026-11-24",
+     "Guru Nanak's Birthday"
+    ],
+    [
+     "2026-12-25",
+     "Christmas Day"
+    ]
+   ]
+  },
+  "2027": {
+   "order": "DoPT O.M. No. F.No.12/2/2023-JCA dated 16.07.2026",
+   "source": "https://www.staffnews.in/2026/07/list-of-holidays-for-the-year-2027-gazetted.html",
+   "source_note": "Copy of the DoPT order published by staffnews.in; the original is on dopt.gov.in",
+   "holidays": [
+    [
+     "2027-01-26",
+     "Republic Day"
+    ],
+    [
+     "2027-03-10",
+     "Id-ul-Fitr"
+    ],
+    [
+     "2027-03-23",
+     "Holi"
+    ],
+    [
+     "2027-03-26",
+     "Good Friday"
+    ],
+    [
+     "2027-04-15",
+     "Ram Navami"
+    ],
+    [
+     "2027-04-19",
+     "Mahavir Jayanti"
+    ],
+    [
+     "2027-05-17",
+     "Id-ul-Zuha (Bakrid)"
+    ],
+    [
+     "2027-05-20",
+     "Budha Purnima"
+    ],
+    [
+     "2027-06-16",
+     "Muharram"
+    ],
+    [
+     "2027-08-15",
+     "Independence Day"
+    ],
+    [
+     "2027-08-15",
+     "Milad-un-Nabi (Id-e-Milad)"
+    ],
+    [
+     "2027-08-25",
+     "Janmashtami (Vaishnava)"
+    ],
+    [
+     "2027-10-02",
+     "Mahatma Gandhi's Birthday"
+    ],
+    [
+     "2027-10-09",
+     "Dussehra (Vijaya Dashmi)"
+    ],
+    [
+     "2027-10-29",
+     "Diwali (Deepavali)"
+    ],
+    [
+     "2027-11-14",
+     "Guru Nanak's Birthday"
+    ],
+    [
+     "2027-12-25",
+     "Christmas Day"
+    ]
+   ]
+  }
+ }
+}

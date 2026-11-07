@@ -1,0 +1,500 @@
+{
+ "_meta": {
+  "dataset": "compliance_deadlines",
+  "as_of": "2026-11-07",
+  "status": "starter set",
+  "how_checked": "Dates were checked on 7 November 2026 against several secondary compliance calendars. They were not yet checked line by line against each official notification, and the extensions the government announces during the year are NOT included.",
+  "scope_note": "Due dates here are the standard statutory dates. A date that falls on a Sunday or a holiday is not shifted automatically; whether the next working day applies depends on the specific law.",
+  "not_included": [
+   "Income-tax return (ITR) due dates, because the rules for tax year 2026-27 changed with the Income-tax Act, 2025 and sources disagree",
+   "State-specific taxes such as professional tax",
+   "Any extension notified after the as_of date"
+  ],
+  "qrmp_note": "QRMP GSTR-3B is due on the 22nd for states in the first group and the 24th for the rest; the group comes from the state of registration."
+ },
+ "deadlines": [
+  {
+   "id": "gstr1-monthly",
+   "name": "GSTR-1 (monthly filers)",
+   "category": "gst",
+   "form": "GSTR-1",
+   "applies_to": "Registered persons filing monthly (and not in the QRMP scheme)",
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "day": 11,
+   "period": "Outward supplies of the previous month",
+   "authority": "GST Council / CBIC / GSTN",
+   "authority_url": "https://www.gst.gov.in/",
+   "legal_basis": "CGST Rules, 2017, rule 59",
+   "confidence": "high"
+  },
+  {
+   "id": "gstr1-qrmp",
+   "name": "GSTR-1 (QRMP quarterly filers)",
+   "category": "gst",
+   "form": "GSTR-1",
+   "applies_to": "Registered persons in the QRMP scheme (turnover up to Rs 5 crore)",
+   "months": [
+    1,
+    4,
+    7,
+    10
+   ],
+   "day": 13,
+   "period": "Outward supplies of the quarter that just ended",
+   "authority": "GST Council / CBIC / GSTN",
+   "authority_url": "https://www.gst.gov.in/",
+   "legal_basis": "CGST Rules, 2017, rule 59(1)",
+   "confidence": "high"
+  },
+  {
+   "id": "iff-qrmp",
+   "name": "Invoice Furnishing Facility (QRMP)",
+   "category": "gst",
+   "form": "IFF",
+   "applies_to": "QRMP filers who choose to upload B2B invoices for months 1 and 2 of a quarter",
+   "months": [
+    2,
+    3,
+    5,
+    6,
+    8,
+    9,
+    11,
+    12
+   ],
+   "day": 13,
+   "period": "Invoices of the previous month (optional)",
+   "authority": "GST Council / CBIC / GSTN",
+   "authority_url": "https://www.gst.gov.in/",
+   "legal_basis": "CGST Rules, 2017, rule 59(2)",
+   "confidence": "medium"
+  },
+  {
+   "id": "gstr3b-monthly",
+   "name": "GSTR-3B (monthly filers)",
+   "category": "gst",
+   "form": "GSTR-3B",
+   "applies_to": "Registered persons filing monthly (and not in the QRMP scheme)",
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "day": 20,
+   "period": "Summary return and tax payment for the previous month",
+   "authority": "GST Council / CBIC / GSTN",
+   "authority_url": "https://www.gst.gov.in/",
+   "legal_basis": "CGST Rules, 2017, rule 61",
+   "confidence": "high"
+  },
+  {
+   "id": "gstr3b-qrmp",
+   "name": "GSTR-3B (QRMP quarterly filers)",
+   "category": "gst",
+   "form": "GSTR-3B",
+   "applies_to": "Registered persons in the QRMP scheme. Due on the 22nd or the 24th depending on the state of registration.",
+   "months": [
+    1,
+    4,
+    7,
+    10
+   ],
+   "day": 22,
+   "period": "Summary return and tax payment for the quarter that just ended",
+   "authority": "GST Council / CBIC / GSTN",
+   "authority_url": "https://www.gst.gov.in/",
+   "legal_basis": "CGST Rules, 2017, rule 61, and the CBIC notifications that group states into 22nd and 24th",
+   "confidence": "high",
+   "variants": "gst_qrmp_state_group"
+  },
+  {
+   "id": "pmt06-qrmp",
+   "name": "PMT-06 monthly tax payment (QRMP)",
+   "category": "gst",
+   "form": "PMT-06",
+   "applies_to": "QRMP filers paying tax for months 1 and 2 of a quarter",
+   "months": [
+    2,
+    3,
+    5,
+    6,
+    8,
+    9,
+    11,
+    12
+   ],
+   "day": 25,
+   "period": "Tax payment for the previous month",
+   "authority": "GST Council / CBIC / GSTN",
+   "authority_url": "https://www.gst.gov.in/",
+   "legal_basis": "CGST Rules, 2017, rule 61A",
+   "confidence": "medium"
+  },
+  {
+   "id": "cmp08",
+   "name": "CMP-08 (composition scheme)",
+   "category": "gst",
+   "form": "CMP-08",
+   "applies_to": "Composition taxpayers",
+   "months": [
+    1,
+    4,
+    7,
+    10
+   ],
+   "day": 18,
+   "period": "Self-assessed tax for the quarter that just ended",
+   "authority": "GST Council / CBIC / GSTN",
+   "authority_url": "https://www.gst.gov.in/",
+   "legal_basis": "CGST Rules, 2017, rule 62",
+   "confidence": "medium"
+  },
+  {
+   "id": "gstr4",
+   "name": "GSTR-4 annual return (composition scheme)",
+   "category": "gst",
+   "form": "GSTR-4",
+   "applies_to": "Composition taxpayers",
+   "months": [
+    4
+   ],
+   "day": 30,
+   "period": "The financial year that just ended",
+   "authority": "GST Council / CBIC / GSTN",
+   "authority_url": "https://www.gst.gov.in/",
+   "legal_basis": "CGST Rules, 2017, rule 62",
+   "confidence": "medium"
+  },
+  {
+   "id": "gstr6",
+   "name": "GSTR-6 (Input Service Distributors)",
+   "category": "gst",
+   "form": "GSTR-6",
+   "applies_to": "Input Service Distributors",
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "day": 13,
+   "period": "The previous month",
+   "authority": "GST Council / CBIC / GSTN",
+   "authority_url": "https://www.gst.gov.in/",
+   "legal_basis": "CGST Rules, 2017, rule 65",
+   "confidence": "medium"
+  },
+  {
+   "id": "gstr7-8",
+   "name": "GSTR-7 (TDS) and GSTR-8 (TCS) under GST",
+   "category": "gst",
+   "form": "GSTR-7 / GSTR-8",
+   "applies_to": "Persons deducting TDS under GST, and e-commerce operators collecting TCS",
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "day": 10,
+   "period": "The previous month",
+   "authority": "GST Council / CBIC / GSTN",
+   "authority_url": "https://www.gst.gov.in/",
+   "legal_basis": "CGST Rules, 2017, rules 66 and 67",
+   "confidence": "medium"
+  },
+  {
+   "id": "gstr9",
+   "name": "GSTR-9 annual return (and GSTR-9C where applicable)",
+   "category": "gst",
+   "form": "GSTR-9 / GSTR-9C",
+   "applies_to": "Regular taxpayers above the exemption threshold",
+   "months": [
+    12
+   ],
+   "day": 31,
+   "period": "The financial year that ended on 31 March of the previous calendar year",
+   "authority": "GST Council / CBIC / GSTN",
+   "authority_url": "https://www.gst.gov.in/",
+   "legal_basis": "CGST Rules, 2017, rule 80. This date is often extended by notification.",
+   "confidence": "medium",
+   "notes": "Check the current notification; extensions are common."
+  },
+  {
+   "id": "tds-deposit",
+   "name": "TDS and TCS deposit",
+   "category": "tds",
+   "form": "Challan 281 / ITNS 281",
+   "applies_to": "Deductors and collectors of tax",
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "day": 7,
+   "period": "Tax deducted or collected in the previous month. For March the due date is 30 April.",
+   "authority": "Income Tax Department",
+   "authority_url": "https://www.incometax.gov.in/",
+   "legal_basis": "Income-tax Rules (deposit of tax deducted at source); Income-tax Act, 2025 for tax years from 1 April 2026",
+   "confidence": "high",
+   "day_overrides": {
+    "4": 30
+   },
+   "notes": "Government deductors paying without a challan follow a different date."
+  },
+  {
+   "id": "tds-return-q",
+   "name": "TDS return (Forms 24Q, 26Q, 27Q)",
+   "category": "tds",
+   "form": "24Q / 26Q / 27Q",
+   "applies_to": "Deductors, quarterly statement. Due 31 July, 31 October and 31 January for the first three quarters and 31 May for the last.",
+   "months": [
+    7,
+    10,
+    1,
+    5
+   ],
+   "day": 31,
+   "period": "The quarter that just ended (Q4 return is due 31 May)",
+   "authority": "Income Tax Department",
+   "authority_url": "https://www.incometax.gov.in/",
+   "legal_basis": "Income-tax Rules (statement of deduction of tax)",
+   "confidence": "medium"
+  },
+  {
+   "id": "form16",
+   "name": "Form 16 (salary TDS certificate)",
+   "category": "tds",
+   "form": "Form 16",
+   "applies_to": "Employers, to employees",
+   "months": [
+    6
+   ],
+   "day": 15,
+   "period": "The financial year that just ended",
+   "authority": "Income Tax Department",
+   "authority_url": "https://www.incometax.gov.in/",
+   "legal_basis": "Income-tax Rules (TDS certificates)",
+   "confidence": "medium"
+  },
+  {
+   "id": "advance-tax",
+   "name": "Advance tax instalment",
+   "category": "income_tax",
+   "form": "Challan 280 / ITNS 280",
+   "applies_to": "Taxpayers whose tax payable is Rs 10,000 or more. 15 June: 15%, 15 September: 45%, 15 December: 75%, 15 March: 100% of the year's advance tax.",
+   "months": [
+    6,
+    9,
+    12,
+    3
+   ],
+   "day": 15,
+   "period": "The current financial year",
+   "authority": "Income Tax Department",
+   "authority_url": "https://www.incometax.gov.in/",
+   "legal_basis": "Income-tax Act, 1961 section 211 (until 31 March 2026); Income-tax Act, 2025 for tax years from 1 April 2026",
+   "confidence": "medium"
+  },
+  {
+   "id": "pf",
+   "name": "Provident Fund (EPF) contribution",
+   "category": "labour",
+   "form": "ECR",
+   "applies_to": "Establishments covered by the EPF Act",
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "day": 15,
+   "period": "Contributions for the previous month",
+   "authority": "EPFO / ESIC",
+   "authority_url": "https://www.epfindia.gov.in/",
+   "legal_basis": "EPF Scheme, 1952, paragraph 38",
+   "confidence": "high",
+   "notes": "A grace period of 5 days exists for interest and damages in some cases, but the due date is the 15th."
+  },
+  {
+   "id": "esi",
+   "name": "ESI contribution",
+   "category": "labour",
+   "form": "ESIC challan",
+   "applies_to": "Establishments covered by the ESI Act",
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "day": 15,
+   "period": "Contributions for the previous month",
+   "authority": "ESIC",
+   "authority_url": "https://www.esic.gov.in/",
+   "legal_basis": "ESI (General) Regulations, 1950, regulation 31",
+   "confidence": "high"
+  },
+  {
+   "id": "dir3-kyc",
+   "name": "DIR-3 KYC (director KYC)",
+   "category": "roc",
+   "form": "DIR-3 KYC",
+   "applies_to": "Directors holding a DIN allotted on or before 31 March of the year",
+   "months": [
+    9
+   ],
+   "day": 30,
+   "period": "The financial year that just ended",
+   "authority": "Ministry of Corporate Affairs",
+   "authority_url": "https://www.mca.gov.in/",
+   "legal_basis": "Companies (Appointment and Qualification of Directors) Rules, 2014, rule 12A",
+   "confidence": "medium"
+  },
+  {
+   "id": "dpt3",
+   "name": "DPT-3 return of deposits",
+   "category": "roc",
+   "form": "DPT-3",
+   "applies_to": "Companies that accepted deposits or have outstanding loans reported under this form",
+   "months": [
+    6
+   ],
+   "day": 30,
+   "period": "The financial year that ended on 31 March",
+   "authority": "Ministry of Corporate Affairs",
+   "authority_url": "https://www.mca.gov.in/",
+   "legal_basis": "Companies (Acceptance of Deposits) Rules, 2014, rules 16 and 16A",
+   "confidence": "medium"
+  },
+  {
+   "id": "msme1",
+   "name": "MSME-1 half-yearly return",
+   "category": "roc",
+   "form": "MSME-1",
+   "applies_to": "Companies with outstanding payments to micro or small enterprises over 45 days",
+   "months": [
+    4,
+    10
+   ],
+   "day": 30,
+   "period": "October to March (due 30 April); April to September (due 31 October)",
+   "authority": "Ministry of Corporate Affairs",
+   "authority_url": "https://www.mca.gov.in/",
+   "legal_basis": "MCA notification on specified companies (Companies Act, 2013 section 405)",
+   "confidence": "medium",
+   "day_overrides": {
+    "10": 31
+   }
+  }
+ ],
+ "event_based": [
+  {
+   "id": "agm",
+   "name": "Annual General Meeting (AGM)",
+   "category": "roc",
+   "form": "-",
+   "rule": "Within 6 months of the end of the financial year, so by 30 September for a 31 March year end",
+   "legal_basis": "Companies Act, 2013, section 96",
+   "authority": "Ministry of Corporate Affairs",
+   "authority_url": "https://www.mca.gov.in/",
+   "confidence": "high"
+  },
+  {
+   "id": "aoc4",
+   "name": "AOC-4 (financial statements)",
+   "category": "roc",
+   "form": "AOC-4",
+   "rule": "Within 30 days of the AGM",
+   "legal_basis": "Companies Act, 2013, section 137",
+   "authority": "Ministry of Corporate Affairs",
+   "authority_url": "https://www.mca.gov.in/",
+   "confidence": "high"
+  },
+  {
+   "id": "mgt7",
+   "name": "MGT-7 / MGT-7A (annual return)",
+   "category": "roc",
+   "form": "MGT-7 / MGT-7A",
+   "rule": "Within 60 days of the AGM",
+   "legal_basis": "Companies Act, 2013, section 92",
+   "authority": "Ministry of Corporate Affairs",
+   "authority_url": "https://www.mca.gov.in/",
+   "confidence": "high"
+  },
+  {
+   "id": "adt1",
+   "name": "ADT-1 (auditor appointment)",
+   "category": "roc",
+   "form": "ADT-1",
+   "rule": "Within 15 days of the AGM at which the auditor is appointed",
+   "legal_basis": "Companies Act, 2013, section 139 and the Audit and Auditors Rules, 2014",
+   "authority": "Ministry of Corporate Affairs",
+   "authority_url": "https://www.mca.gov.in/",
+   "confidence": "medium"
+  }
+ ]
+}
