@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="957" height="1034" viewBox="0 0 957 1034" role="img" aria-label="bharat-mcp · PAN, Aadhaar format, IFSC, pincode, state, holidays: terminal output">
+  <title>bharat-mcp · PAN, Aadhaar format, IFSC, pincode, state, holidays</title>
+  <rect width="957" height="1034" rx="10" fill="#1e1f26"/>
+  <rect width="957" height="32" rx="10" fill="#2b2d37"/>
+  <rect y="22" width="957" height="10" fill="#2b2d37"/>
+  <circle cx="20" cy="16" r="6" fill="#ff5f56"/><circle cx="40" cy="16" r="6" fill="#ffbd2e"/><circle cx="60" cy="16" r="6" fill="#27c93f"/>
+  <text x="478.5" y="21" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="12" fill="#9aa0b4">bharat-mcp · PAN, Aadhaar format, IFSC, pincode, state, holidays</text>
+  <g font-family="SF Mono,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" fill="#e6e8ef">
+    <text x="22" y="60" xml:space="preserve"><tspan>── 2. PAN, Aadhaar (format only), IFSC ──</tspan></text>
+    <text x="22" y="81" xml:space="preserve"></text>
+    <text x="22" y="102" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">validate_pan</tspan><tspan> </tspan><tspan style="opacity:.6">{"pan":"ABCPE1234F"}</tspan></text>
+    <text x="22" y="123" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">result            </tspan><tspan> </tspan><tspan style="fill:#69db7c">✔ well-formed</tspan></text>
+    <text x="22" y="144" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">holder type       </tspan><tspan> Individual (person)</tspan></text>
+    <text x="22" y="165" xml:space="preserve"><tspan style="opacity:.6">    (0.3 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="186" xml:space="preserve"></text>
+    <text x="22" y="207" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">validate_pan</tspan><tspan> </tspan><tspan style="opacity:.6">{"pan":"ABCKE1234F"}</tspan></text>
+    <text x="22" y="228" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">result            </tspan><tspan> </tspan><tspan style="fill:#ff6b6b">✘ NOT well-formed</tspan></text>
+    <text x="22" y="249" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">why               </tspan><tspan> </tspan><tspan style="fill:#ffd43b">The 4th character "K" is not a recognised holder type (A, B, C, F, G, H, J, L, P, T).</tspan></text>
+    <text x="22" y="270" xml:space="preserve"><tspan style="opacity:.6">    (0.3 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="291" xml:space="preserve"></text>
+    <text x="22" y="312" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">validate_aadhaar_format</tspan><tspan> </tspan><tspan style="opacity:.6">{"aadhaar":"2345 6789 0124"}</tspan></text>
+    <text x="22" y="333" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">format            </tspan><tspan> </tspan><tspan style="fill:#69db7c">✔ well-formed</tspan></text>
+    <text x="22" y="354" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">shown back        </tspan><tspan> XXXX XXXX 0124</tspan></text>
+    <text x="22" y="375" xml:space="preserve"><tspan style="opacity:.6">    (0.4 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="396" xml:space="preserve"></text>
+    <text x="22" y="417" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">validate_aadhaar_format</tspan><tspan> </tspan><tspan style="opacity:.6">{"aadhaar":"2345 6789 0125"}</tspan></text>
+    <text x="22" y="438" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">format            </tspan><tspan> </tspan><tspan style="fill:#ff6b6b">✘ NOT well-formed</tspan></text>
+    <text x="22" y="459" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">why               </tspan><tspan> </tspan><tspan style="fill:#ffd43b">The Verhoeff check digit does not match.</tspan></text>
+    <text x="22" y="480" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">shown back        </tspan><tspan> XXXX XXXX 0125</tspan></text>
+    <text x="22" y="501" xml:space="preserve"><tspan style="opacity:.6">    (0.2 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="522" xml:space="preserve"><tspan style="opacity:.6">    (made-up numbers; the tool checks only the format and never stores or looks anything up)</tspan></text>
+    <text x="22" y="543" xml:space="preserve"></text>
+    <text x="22" y="564" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">validate_ifsc</tspan><tspan> </tspan><tspan style="opacity:.6">{"ifsc":"SBIN0001234"}</tspan></text>
+    <text x="22" y="585" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">result            </tspan><tspan> </tspan><tspan style="fill:#69db7c">✔ well-formed</tspan></text>
+    <text x="22" y="606" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">bank              </tspan><tspan> State Bank of India</tspan></text>
+    <text x="22" y="627" xml:space="preserve"><tspan style="opacity:.6">    (0.4 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="648" xml:space="preserve"></text>
+    <text x="22" y="669" xml:space="preserve"><tspan>── 3. Lookups ──</tspan></text>
+    <text x="22" y="690" xml:space="preserve"></text>
+    <text x="22" y="711" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">lookup_pincode</tspan><tspan> </tspan><tspan style="opacity:.6">{"pincode":"302001"}</tspan></text>
+    <text x="22" y="732" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">place             </tspan><tspan> Jaipur, Rajasthan</tspan></text>
+    <text x="22" y="753" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">post offices      </tspan><tspan> 7 (C.P.M.G S.O, Chandpole Bazar S.O…)</tspan></text>
+    <text x="22" y="774" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">data as of        </tspan><tspan> </tspan><tspan style="fill:#ffd43b">2019-05-30</tspan></text>
+    <text x="22" y="795" xml:space="preserve"><tspan style="opacity:.6">    (20.5 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="816" xml:space="preserve"></text>
+    <text x="22" y="837" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">state_info</tspan><tspan> </tspan><tspan style="opacity:.6">{"query":"27"}</tspan></text>
+    <text x="22" y="858" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">state             </tspan><tspan> Maharashtra (state)</tspan></text>
+    <text x="22" y="879" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">RTO prefix        </tspan><tspan> MH</tspan></text>
+    <text x="22" y="900" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">QRMP GSTR-3B day  </tspan><tspan> 22</tspan></text>
+    <text x="22" y="921" xml:space="preserve"><tspan style="opacity:.6">    (0.6 ms, answered offline over stdio)</tspan></text>
+    <text x="22" y="942" xml:space="preserve"></text>
+    <text x="22" y="963" xml:space="preserve"><tspan style="fill:#66d9ef">▶</tspan><tspan> </tspan><tspan style="font-weight:700">india_holidays</tspan><tspan> </tspan><tspan style="opacity:.6">{"date":"2026-11-08"}</tspan></text>
+    <text x="22" y="984" xml:space="preserve"><tspan>    </tspan><tspan style="opacity:.6">central holiday?  </tspan><tspan> </tspan><tspan style="fill:#69db7c">Diwali (Deepavali)</tspan></text>
+    <text x="22" y="1005" xml:space="preserve"><tspan style="opacity:.6">    (1.1 ms, answered offline over stdio)</tspan></text>
+  </g>
+</svg>

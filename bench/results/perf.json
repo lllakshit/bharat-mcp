@@ -1,0 +1,91 @@
+{
+  "measured_at": "2026-11-07T05:05:38.901Z",
+  "machine": {
+    "node": "v26.12.1",
+    "platform": "darwin arm64",
+    "cpu": "Apple M1",
+    "cores": 8,
+    "memory_gb": 16
+  },
+  "in_process": [
+    {
+      "name": "validate_gstin",
+      "iterations": 200000,
+      "ops_per_sec": 1920322,
+      "micros_per_call": 0.5207460450000001
+    },
+    {
+      "name": "validate_pan",
+      "iterations": 200000,
+      "ops_per_sec": 6130339,
+      "micros_per_call": 0.16312312500000004
+    },
+    {
+      "name": "validate_aadhaar_format",
+      "iterations": 200000,
+      "ops_per_sec": 3174188,
+      "micros_per_call": 0.31504125000000005
+    },
+    {
+      "name": "validate_ifsc",
+      "iterations": 200000,
+      "ops_per_sec": 7320867,
+      "micros_per_call": 0.13659583499999997
+    },
+    {
+      "name": "lookup_pincode",
+      "iterations": 100000,
+      "ops_per_sec": 7567373,
+      "micros_per_call": 0.13214625000000013
+    },
+    {
+      "name": "state_info",
+      "iterations": 100000,
+      "ops_per_sec": 121672,
+      "micros_per_call": 8.218805829999999
+    },
+    {
+      "name": "compliance_deadlines (31 days)",
+      "iterations": 5000,
+      "ops_per_sec": 12757,
+      "micros_per_call": 78.39023339999999
+    }
+  ],
+  "over_stdio": {
+    "first_pincode_call_ms": 24.28087500000038,
+    "calls": [
+      {
+        "name": "validate_gstin",
+        "calls": 1000,
+        "p50_ms": 0.0656250000001819,
+        "p95_ms": 0.12362500000017462,
+        "p99_ms": 0.25483299999996234
+      },
+      {
+        "name": "lookup_pincode",
+        "calls": 1000,
+        "p50_ms": 0.045625000000654836,
+        "p95_ms": 0.05804100000023027,
+        "p99_ms": 0.08299999999962893
+      },
+      {
+        "name": "compliance_deadlines",
+        "calls": 300,
+        "p50_ms": 0.15579200000047422,
+        "p95_ms": 0.4004580000000715,
+        "p99_ms": 0.7959160000000338
+      }
+    ],
+    "server_rss_mb_after_pincode_load": 151.453125,
+    "cold_start_ms": {
+      "median": 227.90962499999978,
+      "p95": 418.7881669999997,
+      "runs": 10
+    }
+  },
+  "package": {
+    "tarball_kb": 911,
+    "unpacked_mb": 4.5,
+    "files": 40
+  }
+}

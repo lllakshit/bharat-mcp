@@ -1,0 +1,519 @@
+{
+  "summary": {
+    "label": "claude-haiku (no tools)",
+    "pincode_state": {
+      "correct": 29,
+      "wrong": 1,
+      "unknown": 0,
+      "total": 30
+    },
+    "pincode_district": {
+      "correct": 11,
+      "wrong": 5,
+      "unknown": 14,
+      "total": 30
+    },
+    "holidays_2027": {
+      "correct": 5,
+      "wrong": 0,
+      "unknown": 12,
+      "total": 17
+    }
+  },
+  "pins": [
+    {
+      "pin": "141120",
+      "truth": {
+        "state": "Punjab",
+        "district": "Ludhiana"
+      },
+      "answer": {
+        "state": "Punjab",
+        "district": "Ludhiana"
+      },
+      "state": "correct",
+      "district": "correct"
+    },
+    {
+      "pin": "171205",
+      "truth": {
+        "state": "Himachal Pradesh",
+        "district": "Shimla"
+      },
+      "answer": {
+        "state": "Himachal Pradesh",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "175036",
+      "truth": {
+        "state": "Himachal Pradesh",
+        "district": "Mandi"
+      },
+      "answer": {
+        "state": "Himachal Pradesh",
+        "district": "Mandi"
+      },
+      "state": "correct",
+      "district": "correct"
+    },
+    {
+      "pin": "177112",
+      "truth": {
+        "state": "Himachal Pradesh",
+        "district": "Kangra"
+      },
+      "answer": {
+        "state": "Himachal Pradesh",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "211007",
+      "truth": {
+        "state": "Uttar Pradesh",
+        "district": "Allahabad"
+      },
+      "answer": {
+        "state": "Uttar Pradesh",
+        "district": "Prayagraj"
+      },
+      "state": "correct",
+      "district": "wrong"
+    },
+    {
+      "pin": "221405",
+      "truth": {
+        "state": "Uttar Pradesh",
+        "district": "Varanasi"
+      },
+      "answer": {
+        "state": "Uttar Pradesh",
+        "district": "Bhadohi"
+      },
+      "state": "correct",
+      "district": "wrong"
+    },
+    {
+      "pin": "262122",
+      "truth": {
+        "state": "Uttar Pradesh",
+        "district": "Pilibhit"
+      },
+      "answer": {
+        "state": "Uttarakhand",
+        "district": "unknown"
+      },
+      "state": "wrong",
+      "district": "unknown"
+    },
+    {
+      "pin": "263634",
+      "truth": {
+        "state": "Uttarakhand",
+        "district": "Bageshwar / Almora"
+      },
+      "answer": {
+        "state": "Uttarakhand",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "361325",
+      "truth": {
+        "state": "Gujarat",
+        "district": "Devbhoomi Dwerka / Jamnagar"
+      },
+      "answer": {
+        "state": "Gujarat",
+        "district": "Devbhumi Dwarka"
+      },
+      "state": "correct",
+      "district": "wrong"
+    },
+    {
+      "pin": "387530",
+      "truth": {
+        "state": "Gujarat",
+        "district": "Kheda"
+      },
+      "answer": {
+        "state": "Gujarat",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "413209",
+      "truth": {
+        "state": "Maharashtra",
+        "district": "Solapur"
+      },
+      "answer": {
+        "state": "Maharashtra",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "413410",
+      "truth": {
+        "state": "Maharashtra",
+        "district": "Solapur"
+      },
+      "answer": {
+        "state": "Maharashtra",
+        "district": "Solapur"
+      },
+      "state": "correct",
+      "district": "correct"
+    },
+    {
+      "pin": "414701",
+      "truth": {
+        "state": "Maharashtra",
+        "district": "Ahmed Nagar"
+      },
+      "answer": {
+        "state": "Maharashtra",
+        "district": "Ahmednagar"
+      },
+      "state": "correct",
+      "district": "correct"
+    },
+    {
+      "pin": "415015",
+      "truth": {
+        "state": "Maharashtra",
+        "district": "Satara"
+      },
+      "answer": {
+        "state": "Maharashtra",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "485112",
+      "truth": {
+        "state": "Madhya Pradesh",
+        "district": "Satna"
+      },
+      "answer": {
+        "state": "Madhya Pradesh",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "533253",
+      "truth": {
+        "state": "Andhra Pradesh",
+        "district": "East Godavari"
+      },
+      "answer": {
+        "state": "Andhra Pradesh",
+        "district": "East Godavari"
+      },
+      "state": "correct",
+      "district": "correct"
+    },
+    {
+      "pin": "631605",
+      "truth": {
+        "state": "Tamil Nadu",
+        "district": "Kanchipuram"
+      },
+      "answer": {
+        "state": "Tamil Nadu",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "689513",
+      "truth": {
+        "state": "Kerala",
+        "district": "Pathanamthitta"
+      },
+      "answer": {
+        "state": "Kerala",
+        "district": "Pathanamthitta"
+      },
+      "state": "correct",
+      "district": "correct"
+    },
+    {
+      "pin": "691304",
+      "truth": {
+        "state": "Kerala",
+        "district": "Kollam"
+      },
+      "answer": {
+        "state": "Kerala",
+        "district": "Kollam"
+      },
+      "state": "correct",
+      "district": "correct"
+    },
+    {
+      "pin": "691503",
+      "truth": {
+        "state": "Kerala",
+        "district": "Kollam"
+      },
+      "answer": {
+        "state": "Kerala",
+        "district": "Kollam"
+      },
+      "state": "correct",
+      "district": "correct"
+    },
+    {
+      "pin": "691530",
+      "truth": {
+        "state": "Kerala",
+        "district": "Pathanamthitta"
+      },
+      "answer": {
+        "state": "Kerala",
+        "district": "Kollam"
+      },
+      "state": "correct",
+      "district": "wrong"
+    },
+    {
+      "pin": "711302",
+      "truth": {
+        "state": "West Bengal",
+        "district": "Howrah"
+      },
+      "answer": {
+        "state": "West Bengal",
+        "district": "Howrah"
+      },
+      "state": "correct",
+      "district": "correct"
+    },
+    {
+      "pin": "712233",
+      "truth": {
+        "state": "West Bengal",
+        "district": "Hooghly"
+      },
+      "answer": {
+        "state": "West Bengal",
+        "district": "Hooghly"
+      },
+      "state": "correct",
+      "district": "correct"
+    },
+    {
+      "pin": "722134",
+      "truth": {
+        "state": "West Bengal",
+        "district": "Bankura"
+      },
+      "answer": {
+        "state": "West Bengal",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "758076",
+      "truth": {
+        "state": "Odisha",
+        "district": "Kendujhar"
+      },
+      "answer": {
+        "state": "Odisha",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "761125",
+      "truth": {
+        "state": "Odisha",
+        "district": "Ganjam / Kandhamal"
+      },
+      "answer": {
+        "state": "Odisha",
+        "district": "Ganjam"
+      },
+      "state": "correct",
+      "district": "correct"
+    },
+    {
+      "pin": "783301",
+      "truth": {
+        "state": "Assam",
+        "district": "Bongaigaon / Dhubri"
+      },
+      "answer": {
+        "state": "Assam",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "788722",
+      "truth": {
+        "state": "Assam",
+        "district": "Karimganj"
+      },
+      "answer": {
+        "state": "Assam",
+        "district": "Hailakandi"
+      },
+      "state": "correct",
+      "district": "wrong"
+    },
+    {
+      "pin": "815357",
+      "truth": {
+        "state": "Jharkhand",
+        "district": "Deoghar"
+      },
+      "answer": {
+        "state": "Jharkhand",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    },
+    {
+      "pin": "855113",
+      "truth": {
+        "state": "Bihar",
+        "district": "Katihar"
+      },
+      "answer": {
+        "state": "Bihar",
+        "district": "unknown"
+      },
+      "state": "correct",
+      "district": "unknown"
+    }
+  ],
+  "hol": [
+    {
+      "name": "Republic Day",
+      "truth": "2027-01-26",
+      "answer": "2027-01-26",
+      "verdict": "correct"
+    },
+    {
+      "name": "Id-ul-Fitr",
+      "truth": "2027-03-10",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Holi",
+      "truth": "2027-03-23",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Good Friday",
+      "truth": "2027-03-26",
+      "answer": "2027-03-26",
+      "verdict": "correct"
+    },
+    {
+      "name": "Ram Navami",
+      "truth": "2027-04-15",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Mahavir Jayanti",
+      "truth": "2027-04-19",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Id-ul-Zuha (Bakrid)",
+      "truth": "2027-05-17",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Budha Purnima",
+      "truth": "2027-05-20",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Muharram",
+      "truth": "2027-06-16",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Independence Day",
+      "truth": "2027-08-15",
+      "answer": "2027-08-15",
+      "verdict": "correct"
+    },
+    {
+      "name": "Milad-un-Nabi (Id-e-Milad)",
+      "truth": "2027-08-15",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Janmashtami (Vaishnava)",
+      "truth": "2027-08-25",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Mahatma Gandhi's Birthday",
+      "truth": "2027-10-02",
+      "answer": "2027-10-02",
+      "verdict": "correct"
+    },
+    {
+      "name": "Dussehra (Vijaya Dashmi)",
+      "truth": "2027-10-09",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Diwali (Deepavali)",
+      "truth": "2027-10-29",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Guru Nanak's Birthday",
+      "truth": "2027-11-14",
+      "answer": "unknown",
+      "verdict": "unknown"
+    },
+    {
+      "name": "Christmas Day",
+      "truth": "2027-12-25",
+      "answer": "2027-12-25",
+      "verdict": "correct"
+    }
+  ]
+}

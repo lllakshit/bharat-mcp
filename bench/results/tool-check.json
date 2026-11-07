@@ -1,0 +1,228 @@
+{
+  "correct": 40,
+  "total": 40,
+  "fake_accepted": 0,
+  "elapsed_ms": 8.9,
+  "rows": [
+    {
+      "gstin": "21TVFCC2925T3ZM",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "22JQCLK7778S5ZV",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "07VUGGR2502C9ZS",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "04JBYAM8901J9ZT",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be I, not T."
+    },
+    {
+      "gstin": "10NDOGR4241G8ZP",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "07CWXFS8048J7ZT",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "20ADWFE7598F1ZR",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "23UDDLB3426D3ZL",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be 1, not L."
+    },
+    {
+      "gstin": "19ESRLH8984C3Z1",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be 4, not 1."
+    },
+    {
+      "gstin": "06KDQFZ2678Y1Z3",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be 2, not 3."
+    },
+    {
+      "gstin": "21IELCP2858T5Z3",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "10GAFLT6850D7ZU",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "09QWDJR0872C7ZC",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be A, not C."
+    },
+    {
+      "gstin": "27MZKCO5782R4ZI",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "09KBICZ8918B7ZH",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be G, not H."
+    },
+    {
+      "gstin": "09RAMJE2242F6ZP",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "30AGXHJ1683P5Z3",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "27TDXFJ1328H8Z7",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be 5, not 7."
+    },
+    {
+      "gstin": "14OGDGS6725L4ZU",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be 4, not U."
+    },
+    {
+      "gstin": "08DTRGR1312P1ZI",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "02GRRFD9903T5ZE",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "08SDHJF5625J6Z2",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be 6, not 2."
+    },
+    {
+      "gstin": "21CQOPK8017V4ZX",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "06WZLHF7804C4ZE",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "24HEXPD3318R8Z3",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be J, not 3."
+    },
+    {
+      "gstin": "24UINPV2509S5ZD",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be R, not D."
+    },
+    {
+      "gstin": "07IMBGV0624T6ZV",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be N, not V."
+    },
+    {
+      "gstin": "22QVCBL0344R8ZR",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be P, not R."
+    },
+    {
+      "gstin": "06RNVAN8274E1ZY",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be S, not Y."
+    },
+    {
+      "gstin": "22ZYGLT9641F5ZN",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "01RLFCG9549K2Z7",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "29TDJGC3201A7Z7",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "07LLBPA2357O9ZA",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be L, not A."
+    },
+    {
+      "gstin": "04VJNHZ4444O8Z2",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "27HGGPG9286D2ZZ",
+      "expected": "VALID",
+      "answer": "VALID"
+    },
+    {
+      "gstin": "02NEAAZ1182F6Z5",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be 4, not 5."
+    },
+    {
+      "gstin": "18GKGGW3170Q3ZZ",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be M, not Z."
+    },
+    {
+      "gstin": "27RPHLP4088V4ZW",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be B, not W."
+    },
+    {
+      "gstin": "25WKRPW1917M3ZS",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be Q, not S."
+    },
+    {
+      "gstin": "36ZAHLO8746I3ZN",
+      "expected": "INVALID",
+      "answer": "INVALID",
+      "reason": "The check character is wrong: it should be M, not N."
+    }
+  ]
+}

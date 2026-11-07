@@ -1,0 +1,20 @@
+Machine: Apple M1, 8 cores, 16 GB, darwin arm64, Node v26.12.1
+
+In-process (the functions, no MCP):
+  validate_gstin                        1,920,322 calls/s        0.52 µs each
+  validate_pan                          6,130,339 calls/s        0.16 µs each
+  validate_aadhaar_format               3,174,188 calls/s        0.32 µs each
+  validate_ifsc                         7,320,867 calls/s        0.14 µs each
+  lookup_pincode                        7,567,373 calls/s        0.13 µs each
+  state_info                              121,672 calls/s        8.22 µs each
+  compliance_deadlines (31 days)           12,757 calls/s       78.39 µs each
+
+Over stdio (a real MCP client talking to the server):
+  cold start to tool list (median of 10): 228 ms (p95 419 ms)
+  first lookup_pincode (reads the 4.4 MB data file once): 24.3 ms
+  validate_gstin         p50   0.07 ms   p95   0.12 ms   p99   0.25 ms   (1000 calls)
+  lookup_pincode         p50   0.05 ms   p95   0.06 ms   p99   0.08 ms   (1000 calls)
+  compliance_deadlines   p50   0.16 ms   p95   0.40 ms   p99   0.80 ms   (300 calls)
+  server memory after loading all data: 151 MB
+
+Package: 911 KB download, 4.5 MB unpacked, 40 files

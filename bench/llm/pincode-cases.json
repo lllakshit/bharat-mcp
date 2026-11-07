@@ -1,0 +1,125 @@
+{
+ "seed": 11,
+ "pincodes": {
+  "141120": {
+   "state": "Punjab",
+   "district": "Ludhiana"
+  },
+  "171205": {
+   "state": "Himachal Pradesh",
+   "district": "Shimla"
+  },
+  "175036": {
+   "state": "Himachal Pradesh",
+   "district": "Mandi"
+  },
+  "177112": {
+   "state": "Himachal Pradesh",
+   "district": "Kangra"
+  },
+  "211007": {
+   "state": "Uttar Pradesh",
+   "district": "Allahabad"
+  },
+  "221405": {
+   "state": "Uttar Pradesh",
+   "district": "Varanasi"
+  },
+  "262122": {
+   "state": "Uttar Pradesh",
+   "district": "Pilibhit"
+  },
+  "263634": {
+   "state": "Uttarakhand",
+   "district": "Bageshwar / Almora"
+  },
+  "361325": {
+   "state": "Gujarat",
+   "district": "Devbhoomi Dwerka / Jamnagar"
+  },
+  "387530": {
+   "state": "Gujarat",
+   "district": "Kheda"
+  },
+  "413209": {
+   "state": "Maharashtra",
+   "district": "Solapur"
+  },
+  "413410": {
+   "state": "Maharashtra",
+   "district": "Solapur"
+  },
+  "414701": {
+   "state": "Maharashtra",
+   "district": "Ahmed Nagar"
+  },
+  "415015": {
+   "state": "Maharashtra",
+   "district": "Satara"
+  },
+  "485112": {
+   "state": "Madhya Pradesh",
+   "district": "Satna"
+  },
+  "533253": {
+   "state": "Andhra Pradesh",
+   "district": "East Godavari"
+  },
+  "631605": {
+   "state": "Tamil Nadu",
+   "district": "Kanchipuram"
+  },
+  "689513": {
+   "state": "Kerala",
+   "district": "Pathanamthitta"
+  },
+  "691304": {
+   "state": "Kerala",
+   "district": "Kollam"
+  },
+  "691503": {
+   "state": "Kerala",
+   "district": "Kollam"
+  },
+  "691530": {
+   "state": "Kerala",
+   "district": "Pathanamthitta"
+  },
+  "711302": {
+   "state": "West Bengal",
+   "district": "Howrah"
+  },
+  "712233": {
+   "state": "West Bengal",
+   "district": "Hooghly"
+  },
+  "722134": {
+   "state": "West Bengal",
+   "district": "Bankura"
+  },
+  "758076": {
+   "state": "Odisha",
+   "district": "Kendujhar"
+  },
+  "761125": {
+   "state": "Odisha",
+   "district": "Ganjam / Kandhamal"
+  },
+  "783301": {
+   "state": "Assam",
+   "district": "Bongaigaon / Dhubri"
+  },
+  "788722": {
+   "state": "Assam",
+   "district": "Karimganj"
+  },
+  "815357": {
+   "state": "Jharkhand",
+   "district": "Deoghar"
+  },
+  "855113": {
+   "state": "Bihar",
+   "district": "Katihar"
+  }
+ }
+}

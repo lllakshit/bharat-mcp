@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="746" height="89" viewBox="0 0 746 89" role="img" aria-label="independent cross-check · Python vs TypeScript, 20,000 GSTINs: terminal output">
+  <title>independent cross-check · Python vs TypeScript, 20,000 GSTINs</title>
+  <rect width="746" height="89" rx="10" fill="#1e1f26"/>
+  <rect width="746" height="32" rx="10" fill="#2b2d37"/>
+  <rect y="22" width="746" height="10" fill="#2b2d37"/>
+  <circle cx="20" cy="16" r="6" fill="#ff5f56"/><circle cx="40" cy="16" r="6" fill="#ffbd2e"/><circle cx="60" cy="16" r="6" fill="#27c93f"/>
+  <text x="373" y="21" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="12" fill="#9aa0b4">independent cross-check · Python vs TypeScript, 20,000 GSTINs</text>
+  <g font-family="SF Mono,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" fill="#e6e8ef">
+    <text x="22" y="60" xml:space="preserve"><tspan>20000 strings compared, 0 disagreements between the Python and TypeScript checksums</tspan></text>
+  </g>
+</svg>

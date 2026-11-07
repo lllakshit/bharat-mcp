@@ -1,0 +1,66 @@
+
+ RUN  v5.1.0 /Users/user/Personal/bharat-mcp
+
+ ✓ tests/validators.test.ts > verhoeff > matches the published reference vectors 1ms
+ ✓ tests/validators.test.ts > validateGstin > accepts 27AAPFU0939F1ZV 1ms
+ ✓ tests/validators.test.ts > validateGstin > accepts 29AAGCB7383J1Z4 0ms
+ ✓ tests/validators.test.ts > validateGstin > accepts 27AAACR5055K1Z7 0ms
+ ✓ tests/validators.test.ts > validateGstin > decodes the parts 0ms
+ ✓ tests/validators.test.ts > validateGstin > ignores spaces and hyphens 0ms
+ ✓ tests/validators.test.ts > validateGstin > rejects a GSTIN with one wrong character (the case models wave through) 1ms
+ ✓ tests/validators.test.ts > validateGstin > explains a wrong check character 0ms
+ ✓ tests/validators.test.ts > validateGstin > rejects wrong length, shape and state code 0ms
+ ✓ tests/validators.test.ts > validateGstin > says so when the 14th character is not Z instead of calling the number fake 0ms
+ ✓ tests/validators.test.ts > validateGstin > does not fold look-alike Unicode letters into valid ones 0ms
+ ✓ tests/validators.test.ts > validateGstin > accepts the special GST codes 97 and 99 0ms
+ ✓ tests/validators.test.ts > validateGstin > rejects a PAN with an unknown holder type inside a GSTIN 0ms
+ ✓ tests/validators.test.ts > validatePan > accepts ABCPE1234F 0ms
+ ✓ tests/validators.test.ts > validatePan > accepts AAACR5055K 0ms
+ ✓ tests/validators.test.ts > validatePan > accepts AAAFX1234Z 0ms
+ ✓ tests/validators.test.ts > validatePan > accepts AAAHA1234B 0ms
+ ✓ tests/validators.test.ts > validatePan > accepts AAATA1234B 0ms
+ ✓ tests/validators.test.ts > validatePan > accepts AAAGA1234B 0ms
+ ✓ tests/validators.test.ts > validatePan > normalises case and spaces 0ms
+ ✓ tests/validators.test.ts > validatePan > rejects bad shapes 0ms
+ ✓ tests/validators.test.ts > validatePan > rejects an unknown holder type 0ms
+ ✓ tests/validators.test.ts > validateAadhaarFormat > accepts a number with a correct Verhoeff digit, with or without spaces 1ms
+ ✓ tests/validators.test.ts > validateAadhaarFormat > only ever returns the last four digits 0ms
+ ✓ tests/validators.test.ts > validateAadhaarFormat > masks everything unless the input is a full 12-digit number 0ms
+ ✓ tests/validators.test.ts > validateAadhaarFormat > catches every single-digit mistake and every swap of neighbouring digits 1ms
+ ✓ tests/validators.test.ts > validateAadhaarFormat > rejects wrong length, letters and a leading 0 or 1 0ms
+ ✓ tests/validators.test.ts > validateIfsc > accepts a well-formed code and names a known bank 0ms
+ ✓ tests/validators.test.ts > validateIfsc > accepts an unknown bank code but gives no name 0ms
+ ✓ tests/validators.test.ts > validateIfsc > rejects bad shapes, including a non-zero fifth character 0ms
+ ✓ tests/data.test.ts > states > has 36 states and union territories with unique GST codes and RTO prefixes 2ms
+ ✓ tests/data.test.ts > states > finds a state by name, GST code, ISO code and RTO prefix 1ms
+ ✓ tests/data.test.ts > states > accepts common alternative names and older codes, and never guesses from a vague word 1ms
+ ✓ tests/data.test.ts > states > knows the GST codes that are not states 1ms
+ ✓ tests/data.test.ts > lookupPincode > finds well-known pincodes 28ms
+ ✓ tests/data.test.ts > lookupPincode > uses today's state names 0ms
+ ✓ tests/data.test.ts > lookupPincode > says why a pincode was not found 0ms
+ ✓ tests/data.test.ts > lookupPincode > always reports how old the data is 1ms
+ ✓ tests/data.test.ts > holidays > has 17 closed holidays for each bundled year, in date order, with correct weekdays 2ms
+ ✓ tests/data.test.ts > holidays > checks a single date and returns nothing for years it does not cover 0ms
+ ✓ tests/data.test.ts > dates > validates real calendar dates only 0ms
+ ✓ tests/data.test.ts > dates > does date arithmetic without time-zone drift 0ms
+ ✓ tests/data.test.ts > computeDeadlines > lists the standard monthly dates for a month 14ms
+ ✓ tests/data.test.ts > computeDeadlines > moves the March TDS deposit to 30 April 2ms
+ ✓ tests/data.test.ts > computeDeadlines > picks the right QRMP GSTR-3B day for the state 1ms
+ ✓ tests/data.test.ts > computeDeadlines > handles quarterly, annual and year-crossing ranges 0ms
+ ✓ tests/data.test.ts > computeDeadlines > filters by category and returns the event-based rules for that category only 0ms
+ ✓ tests/data.test.ts > computeDeadlines > flags a due date that falls on a central government holiday without moving it 0ms
+ ✓ tests/data.test.ts > computeDeadlines > every rule names its authority, legal basis and confidence 4ms
+ ✓ tests/data.test.ts > computeDeadlines > rejects impossible or oversized ranges 1ms
+ ✓ tests/data.test.ts > computeDeadlines > warns when the range goes beyond the bundled holiday years 0ms
+ ✓ tests/data.test.ts > computeDeadlines > always states how far the data can be trusted 0ms
+ ✓ tests/server.test.ts > the MCP server > lists all eight tools, each marked read-only 5ms
+ ✓ tests/server.test.ts > the MCP server > validates a real GSTIN and rejects a fake one that looks right 2ms
+ ✓ tests/server.test.ts > the MCP server > never returns more than the last four Aadhaar digits 0ms
+ ✓ tests/server.test.ts > the MCP server > answers the lookup and calendar tools 28ms
+ ✓ tests/server.test.ts > the MCP server > rejects bad input instead of guessing 1ms
+
+ Test Files  3 passed (3)
+      Tests  57 passed (57)
+   Start at  10:35:30
+   Duration  345ms (import 48%, tests 40%, transform 9%, worker 3%)
+

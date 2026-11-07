@@ -1,0 +1,335 @@
+{
+  "summary": {
+    "label": "claude-opus (no tools)",
+    "tool_calls_used": "0 (only the report tool)",
+    "accuracy": 1,
+    "correct": 40,
+    "total": 40,
+    "fake_accepted": 0,
+    "fakes": 20,
+    "real_rejected": 0,
+    "reals": 20
+  },
+  "rows": [
+    {
+      "n": 1,
+      "gstin": "21TVFCC2925T3ZM",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 2,
+      "gstin": "22JQCLK7778S5ZV",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 3,
+      "gstin": "07VUGGR2502C9ZS",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 4,
+      "gstin": "04JBYAM8901J9ZT",
+      "expected": "INVALID",
+      "kind": "one character changed (position 12)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 5,
+      "gstin": "10NDOGR4241G8ZP",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 6,
+      "gstin": "07CWXFS8048J7ZT",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 7,
+      "gstin": "20ADWFE7598F1ZR",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 8,
+      "gstin": "23UDDLB3426D3ZL",
+      "expected": "INVALID",
+      "kind": "one character changed (position 7)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 9,
+      "gstin": "19ESRLH8984C3Z1",
+      "expected": "INVALID",
+      "kind": "one character changed (position 15)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 10,
+      "gstin": "06KDQFZ2678Y1Z3",
+      "expected": "INVALID",
+      "kind": "one character changed (position 9)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 11,
+      "gstin": "21IELCP2858T5Z3",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 12,
+      "gstin": "10GAFLT6850D7ZU",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 13,
+      "gstin": "09QWDJR0872C7ZC",
+      "expected": "INVALID",
+      "kind": "one character changed (position 13)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 14,
+      "gstin": "27MZKCO5782R4ZI",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 15,
+      "gstin": "09KBICZ8918B7ZH",
+      "expected": "INVALID",
+      "kind": "one character changed (position 15)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 16,
+      "gstin": "09RAMJE2242F6ZP",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 17,
+      "gstin": "30AGXHJ1683P5Z3",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 18,
+      "gstin": "27TDXFJ1328H8Z7",
+      "expected": "INVALID",
+      "kind": "one character changed (position 1)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 19,
+      "gstin": "14OGDGS6725L4ZU",
+      "expected": "INVALID",
+      "kind": "one character changed (position 2)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 20,
+      "gstin": "08DTRGR1312P1ZI",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 21,
+      "gstin": "02GRRFD9903T5ZE",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 22,
+      "gstin": "08SDHJF5625J6Z2",
+      "expected": "INVALID",
+      "kind": "one character changed (position 15)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 23,
+      "gstin": "21CQOPK8017V4ZX",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 24,
+      "gstin": "06WZLHF7804C4ZE",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 25,
+      "gstin": "24HEXPD3318R8Z3",
+      "expected": "INVALID",
+      "kind": "one character changed (position 12)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 26,
+      "gstin": "24UINPV2509S5ZD",
+      "expected": "INVALID",
+      "kind": "one character changed (position 15)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 27,
+      "gstin": "07IMBGV0624T6ZV",
+      "expected": "INVALID",
+      "kind": "one character changed (position 2)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 28,
+      "gstin": "22QVCBL0344R8ZR",
+      "expected": "INVALID",
+      "kind": "one character changed (position 2)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 29,
+      "gstin": "06RNVAN8274E1ZY",
+      "expected": "INVALID",
+      "kind": "one character changed (position 15)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 30,
+      "gstin": "22ZYGLT9641F5ZN",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 31,
+      "gstin": "01RLFCG9549K2Z7",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 32,
+      "gstin": "29TDJGC3201A7Z7",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 33,
+      "gstin": "07LLBPA2357O9ZA",
+      "expected": "INVALID",
+      "kind": "one character changed (position 15)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 34,
+      "gstin": "04VJNHZ4444O8Z2",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 35,
+      "gstin": "27HGGPG9286D2ZZ",
+      "expected": "VALID",
+      "kind": "correct",
+      "answer": "VALID",
+      "correct": true
+    },
+    {
+      "n": 36,
+      "gstin": "02NEAAZ1182F6Z5",
+      "expected": "INVALID",
+      "kind": "one character changed (position 15)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 37,
+      "gstin": "18GKGGW3170Q3ZZ",
+      "expected": "INVALID",
+      "kind": "one character changed (position 15)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 38,
+      "gstin": "27RPHLP4088V4ZW",
+      "expected": "INVALID",
+      "kind": "one character changed (position 15)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 39,
+      "gstin": "25WKRPW1917M3ZS",
+      "expected": "INVALID",
+      "kind": "one character changed (position 2)",
+      "answer": "INVALID",
+      "correct": true
+    },
+    {
+      "n": 40,
+      "gstin": "36ZAHLO8746I3ZN",
+      "expected": "INVALID",
+      "kind": "one character changed (position 11)",
+      "answer": "INVALID",
+      "correct": true
+    }
+  ]
+}

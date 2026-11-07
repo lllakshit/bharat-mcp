@@ -1,0 +1,20 @@
+bharat-mcp validate_gstin over stdio: 40/40 correct · fake GSTINs accepted 0/20 · 9 ms for all 40 calls
+  e.g. 04JBYAM8901J9ZT → INVALID: The check character is wrong: it should be I, not T.
+  e.g. 23UDDLB3426D3ZL → INVALID: The check character is wrong: it should be 1, not L.
+  e.g. 19ESRLH8984C3Z1 → INVALID: The check character is wrong: it should be 4, not 1.
+
+Test 1 · Is this GSTIN valid?  40 GSTINs: 20 real, 20 with exactly one character changed
+                        score     fakes accepted   real ones rejected  time for all 40
+claude-haiku, no tools  38/40     1/20             1/20                43 s
+claude-sonnet, no tools 40/40     0/20             0/20                56 s
+claude-opus, no tools   40/40     0/20             0/20                70 s
+bharat-mcp (the tool)   40/40     0/20             0/20                9 ms (40 calls over stdio)
+
+Test 2 · Data a model cannot calculate
+                        pincode → state   2027 central-government holidays (17)
+claude-haiku, no tools  29/30 right       5 match the DoPT order, 0 differ, 12 said unknown
+claude-sonnet, no tools 29/30 right       13 match the DoPT order, 4 differ, 0 said unknown
+bharat-mcp (the tool)   answer key*       answer key* (read from the DoPT order)
+
+* The tool's own data is the answer key here, so a perfect score would prove
+  nothing. What the tool adds is the same answer every time, with its source and date.

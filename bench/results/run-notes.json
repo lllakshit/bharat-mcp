@@ -1,0 +1,14 @@
+{
+  "how_these_runs_were_made": "Each model was a fresh Claude Code subagent given one prompt with all the questions, told not to use tools, code, files or the web. The transcripts were checked afterwards: the only tool call in every run was the one that returns the answer to the caller (SubagentHandback). Run on 2026-11-07.",
+  "runs": {
+    "claude-haiku": { "gstin_batch_seconds": 43.0, "knowledge_batch_seconds": 31.4, "tool_calls_besides_reply": 0 },
+    "claude-sonnet": { "gstin_batch_seconds": 56.4, "knowledge_batch_seconds": 20.5, "tool_calls_besides_reply": 0 },
+    "claude-opus": { "gstin_batch_seconds": 69.9, "knowledge_batch_seconds": null, "tool_calls_besides_reply": 0 }
+  },
+  "limits": [
+    "All 40 GSTINs were put in one prompt, so the models could take care over each one. A single casual question in a chat may behave differently.",
+    "Only Claude models were tested here. Other models were not.",
+    "Subagents may think before answering; this is not the same as a short chat reply with thinking off.",
+    "Forty questions is a small sample. One mistake moves the score by 2.5 points."
+  ]
+}
